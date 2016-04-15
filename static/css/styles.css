@@ -1,0 +1,456 @@
+/* GLOBAL RESET */
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol, ul, li {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: bold
+}
+
+q:before, q:after {
+    content: ''
+}
+
+strong {
+    font-weight: bold
+}
+
+em {
+    font-style: italic
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #000033;
+}
+
+a img {
+    border: none
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+/* SITE STYLES*/
+
+html {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    overflow-y: scroll;
+    height: 100%;
+    background: #fafafa url("../images/bg.png") repeat 0 -10px;
+}
+
+body {
+    width: 960px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+header {
+    color: #FFFFFF;
+    font-size: 3em;
+    font-weight: bold;
+    height: 200px;
+    padding: 50px 0;
+    text-shadow: 1px 1px 5px #000000;
+}
+
+header div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 230px;
+    background: #fff url("../images/bgt.png") repeat-x;
+    z-index: -10;
+    border-bottom: 1px solid #dedede;
+}
+
+nav {
+    height: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    background-color: #fff;
+    height: 30px;
+    padding: 8px 0 0 0;
+    font-weight: bold;
+    margin-right: 5px;
+    border-radius: 2px 2px 0 0;
+    border: 1px solid #dedede;
+    border-bottom: 0;
+}
+
+nav ul li:hover {
+    cursor: pointer;
+    background-color: #dedede;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #000033;
+    padding: 8px 10px;
+}
+
+#content {
+    min-height: 800px;
+    background-color: #fff;
+    border: 1px solid #DEDEDE;
+    border-top: 0;
+    padding: 10px;
+}
+
+#content fieldset {
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+}
+
+#content fieldset div {
+    padding: 0 10px;
+}
+
+#content fieldset .datebtns {
+    border: 1px solid #dedede;
+    padding: 4px 9px;
+    border-radius: 2px;
+}
+
+#content fieldset #dateleft {
+    background: url("../images/icons.png") -343px -392px;
+}
+
+#content fieldset #dateright {
+    background: url("../images/icons.png") -146px -367px;
+}
+
+#content fieldset #datecal {
+    background: url("../images/icons.png") -293px -74px;
+}
+
+#content fieldset div dfn {
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+    margin: 0 0 0 10px;
+    text-align: left;
+}
+
+#content fieldset #hs {
+    height: 25px;
+    margin: 10px 0;
+    padding: 0 5px;
+    width: 250px;
+}
+
+#content fieldset label {
+    margin: 0 10px;
+}
+
+#content table {
+    width: 100%;
+}
+
+#content table th {
+    font-weight: bold;
+}
+
+#content table th, #content table td {
+    padding: 5px;
+}
+
+#content table tbody tr {
+    border-bottom: 1px solid #dedede;
+}
+
+#content table tbody tr:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+#content table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+#content table thead {
+    background-color: #dedede;
+}
+
+#content table tbody tr:nth-child(even), .teven {
+    background-color: #f2f2f2;
+}
+
+#login {
+    text-align: center;
+}
+
+#login div {
+    padding: 10px;
+    text-align: left;
+    width: 360px;
+    margin: 200px auto;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px #000;
+}
+
+#login input[type="text"], #login input[type="password"] {
+    padding: 5px;
+    width: 100%;
+}
+
+#flag {
+    float: right;
+}
+
+#logout {
+    float: right;
+    font-size: 0.5em;
+}
+
+#logout:hover {
+    color: #000066;
+}
+
+.btn-admin {
+    display: block;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    font-size: 1.6em;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.btn-admin:hover {
+    background-color: #f2f2f2;
+    color: #000066;
+}
+
+.btnrf {
+    float: right;
+    margin: -15px -5px 0 0;
+}
+
+.btna, .btne, .btnd, .btno {
+    display: block;
+    max-width: 25px;
+    width: 25px;
+}
+
+.btna {
+    background: url("../images/icons.png") no-repeat scroll -222px -467px transparent;
+}
+
+.btna:hover {
+    cursor: pointer;
+}
+
+.btne {
+    background: url("../images/icons.png") no-repeat scroll 0 -5px transparent;
+}
+
+.btne:hover {
+    cursor: pointer;
+}
+
+.btnd {
+    background: url("../images/icons.png") no-repeat scroll -265px -467px transparent;
+}
+
+.btnd:hover {
+    cursor: pointer;
+}
+
+.btno {
+    background: url("../images/icons.png") no-repeat scroll -222px -5px transparent;
+}
+
+.btno:hover {
+    cursor: pointer;
+}
+
+.ths, .tds {
+    width: 25px;
+    max-width: 25px;
+    padding: 5px 0 !important;
+}
+
+.ui-dialog input {
+    height: 25px;
+    margin: 2px 0;
+    width: 360px;
+}
+
+.ui-dialog label {
+    display: inline-block;
+    width: 100px;
+    padding: 0 10px 0 0;
+    text-align: right;
+}
+
+/*ADDED*/
+
+form fieldset {
+    padding: 10px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    text-align: right;
+    padding: 5px 5px 0 0;
+    vertical-align: top;    
+}
+
+input, textarea {
+    height: 30px;
+    margin: 2px 0;
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+
+select {
+    height: 200px;
+    margin: 2px 0;
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+
+td input[type="submit"]{
+    width: 15px;
+    padding: 0;
+}
+
+form input[type="submit"]{
+    width: 80px;
+    padding: 0;
+}
+
+#content fieldset td div {
+    padding: 0 0px;
+}
+
+input[width="120"] {
+    width: 120px;
+    margin: 1px 1px;
+    padding: 2px;
+}
+
+input[width="80"] {
+    width: 90px;
+    margin: 1px 1px;
+    padding: 2px;
+}
+
+input[width="60"] {
+    width: 60px;
+    margin: 1px 1px;
+    padding: 2px;
+}
+
+input[width="50"] {
+    width: 50px;
+    margin: 1px 1px;
+    padding: 2px;
+}
+
+input[width="40"] {
+    width: 40px;
+    margin: 1px 1px;
+    padding: 2px;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+}
+
+.boxes {
+    width: 1em;
+}
+
+.error_message 
+{
+   color: black;
+   padding: 2px 20px 2px 20px;
+   background-image: -ms-linear-gradient(left, #FF7566 0%, #EF1120 100%);
+   background-image: -moz-linear-gradient(left, #FF7566 0%, #EF1120 100%);
+   background-image: -o-linear-gradient(left, #FF7566 0%, #EF1120 100%);
+   background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #FF7566), color-stop(1, #EF1120));
+   background-image: -webkit-linear-gradient(left, #FF7566 0%, #EF1120 100%);
+   background-image: linear-gradient(to right, #FF7566 0%, #EF1120 100%);   
+}
+
+.entry_link {
+  color: #0000ee;
+}
+
+.entry_name {
+  font-size: 16px !important;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.entry_content {
+  clear: both;
+  font-size: 12;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.entry_content_date {
+  font-size: 12;
+  color: #cccccc;
+}

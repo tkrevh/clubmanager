@@ -1,0 +1,19 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+     {% if organisation %}
+         <h2>{{ organisation.name }} - {% trans "Reports" %}</h2>
+     {% else %}
+         <h2>{% trans "Reports" %}</h2>
+     {% endif %}
+    <h1>&nbsp;</h1>
+
+    <div>
+      <a href="/reports/sailplane/allmembers/" class="btn-admin">{% trans "Sailplane - all members" %}</a>
+      <a href="/reports/sailplane/bytype/" class="btn-admin">{% trans "Sailplane - by type" %}</a>
+      <a href="/reports/sailplane/detailed/" class="btn-admin">{% trans "Sailplane - detailed" %}</a>
+      <a href="#" class="btn-admin">-------------------------------------</a>
+      <a href="/reports/powered/allmembers/" class="btn-admin">{% trans "Powered Aircraft - all members" %}</a>
+      <a href="/reports/powered/bytype/" class="btn-admin">{% trans "Powered Aircraft - by type" %}</a>
+      <a href="/reports/powered/detailed/" class="btn-admin">{% trans "Powered Aircraft - detailed" %}</a>
+    </div>
+{% endblock %}

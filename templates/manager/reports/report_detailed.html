@@ -1,0 +1,257 @@
+{% extends "index.html" %}
+{% block content %}
+{% load i18n %}
+{% load manager_tags %}
+       <h2>{% trans "Detailed report" %}</h2>
+       <h1>&nbsp;</h1>
+
+   <form action="/reports/{{type}}/detailed/" method="POST">{% csrf_token %}
+
+     <div class="ui-widget">
+         <input id="id_pilot" name="pilot" data="id_pilot_ajax" type="hidden" value="">
+         <input id="pilot_ajax" name="pilot_ajax" width="120" type="text" placeholder="{% trans 'Pilot' %}" autofocus />
+         <input id="id_aircraft" name="aircraft" data="id_aircraft_ajax" value="" type="hidden">
+         <input id="aircraft_ajax" name="aircraft_ajax" width="80" value="" type="text" placeholder="{% trans 'Aircraft' %}" />
+         <input id="id_date_from" class="datePicker" width="80" name="date_from" type="text" placeholder="{% trans 'Date from' %}" />
+         <input id="id_date_to" class="datePicker" width="80" name="date_to" type="text" placeholder="{% trans 'Date to' %}" />
+         <input id="id_text_search" name="text_search" width="80" value="" type="text" placeholder="{% trans 'Text search' %}" />
+         <input type="submit" width="80" class="button white" value="{% trans 'Search' %}" />
+     </div>
+   </form>
+
+   <br/>
+    <h2>{% trans "Flights" %}</h2>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+            <thead>
+            <tr>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Pilot" %}</th>
+                <th>{% trans "Instructor" %}</th>
+                <th>{% trans "Aircraft" %}</th>
+                <th>{% trans "Purpose" %}</th>
+                {% ifequal type "powered" %}
+                <th>{% trans "Block off" %}</th>
+                {% endifequal %}
+                <th>{% trans "Takeoff" %}</th>
+                <th>{% trans "Release" %}</th>
+                <th>{% trans "Landing" %}</th>
+                {% ifequal type "powered" %}
+                <th>{% trans "Block on" %}</th>
+                {% endifequal %}
+                <th>{% trans "Remark" %}</th>
+                <th>{% trans "Flight time" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in report %}
+            <tr>
+               <td>{{ object.date|date:'d/m/Y' }}</td>
+               <td>{{ object.first_name }} {{ object.last_name }}</td>
+               <td>{{ object.instructor_first_name|default_if_none:""  }} {{ object.instructor_last_name|default_if_none:""  }}</td>
+               <td>{{ object.model }} ({{ object.registration }})</td>
+               <td>{{ object.purpose.name }}</td>
+                {% ifequal type "powered" %}
+                <td>{{ object.time_block_off|default_if_none:""  }}</td>
+                {% endifequal %}
+                <td>{{ object.time_takeoff|default_if_none:""  }}</td>
+                <td>{{ object.time_tow_release|default_if_none:""  }}</td>
+                <td>{{ object.time_landing|default_if_none:""  }}</td>
+                {% ifequal type "powered" %}
+                <td>{{ object.time_block_on|default_if_none:""  }}</td>
+                {% endifequal %}
+                <td>{{ object.remark }}</td>
+                <td>{{ object.flight_time }}</td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+
+{% if summary_per_aircraft %}
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+            <thead>
+            <tr>
+                <th>{% trans "Aircraft" %}</th>
+                <th>{% trans "Starts" %}</th>
+                <th>{% trans "Total time" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in summary_per_aircraft %}
+            <tr>
+               <td>{{ object.model }} ({{ object.registration }})</td>
+               <td>{{ object.num_flights }}</td>
+                <td>{{ object.total_flight_time.total_seconds|sectodur  }}</td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+{% endif %}
+
+{% if summary_per_aircraft_commercial %}
+    <h2>{% trans "Commercial" %}</h2>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+            <thead>
+            <tr>
+                <th>{% trans "Aircraft" %}</th>
+                <th>{% trans "Starts" %}</th>
+                <th>{% trans "Total time" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in summary_per_aircraft_commercial %}
+            <tr>
+               <td>{{ object.model }} ({{ object.registration }})</td>
+               <td>{{ object.num_flights }}</td>
+                <td>{{ object.total_flight_time.total_seconds|sectodur  }}</td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+{% endif %}
+
+{% if summary_per_aircraft_noncommercial %}
+    <h2>{% trans "Non-commerical" %}</h2>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+            <thead>
+            <tr>
+                <th>{% trans "Aircraft" %}</th>
+                <th>{% trans "Starts" %}</th>
+                <th>{% trans "Total time" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in summary_per_aircraft_noncommercial %}
+            <tr>
+               <td>{{ object.model }} ({{ object.registration }})</td>
+               <td>{{ object.num_flights }}</td>
+                <td>{{ object.total_flight_time.total_seconds|sectodur  }}</td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+{% endif %}
+
+{% if num_flights %}
+    <fieldset>
+        <table>
+            <thead>
+            <tr>
+                <th>{% trans "Starts" %}</th>
+                <th>{% trans "Total time" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+               <td>{{ num_flights }}</td>
+               <td>{{ total_time.total_seconds|sectodur  }}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+   
+   Number.prototype.pad = function(size)
+   {
+      if(typeof(size) !== "number"){size = 2;}
+      var s = String(this);
+      while (s.length < size) s = "0" + s;
+      return s;
+   }
+   
+    
+   $("[id^='pilot_ajax']").keyup(function() 
+   {
+      var search = $(this).val();
+      Dajaxice.manager.get_pilot(ajaxCallback, {'search_data': search, 'field_id': $(this).attr('id')});
+   }); 
+    
+   $("[id^='aircraft_ajax']").keyup(function() 
+   {
+      var search = $(this).val();
+      Dajaxice.manager.get_aircraft(ajaxCallback, {'search_data': search, 'type': '{{ type }}', 'field_id': $(this).attr('id')});
+   }); 
+    
+   function ajaxCallback(data) 
+   {
+      $( "#"+data.field_id ).autocomplete(
+      {source: data.results, delay: 200, autoFocus: true,
+       select: function(event, ui) 
+         {
+            var selectedObj = ui.item;
+            $("[data='id_"+data.field_id+"']").val(selectedObj.id);
+            return true;
+         },
+       change: function (event, ui) 
+         {
+            if (ui.item == null || ui.item == undefined) 
+            {
+            clearAjaxFields(data.field_id);
+            }
+         }
+      });
+   }
+   
+   function clearAjaxFields(field_id) 
+   {
+       //resets search txtbx
+       var searchField = $('#'+field_id);
+       searchField.val("");
+    
+       //resets search txtbx hidden field
+       var hdnSearchField = $("[data='id_"+field_id+"']");
+       hdnSearchField.val("");
+   }
+
+   function checkIfSingle(event, ui)
+   {
+      // Try to select the first one if it's the only one
+      var $children = jQuery(this).data('autocomplete').menu.element.children();
+      if ($children.size() == 1)
+      {
+        $children.children('a').mouseenter().click();
+      }   
+   }
+  
+</script>
+{% endblock %}

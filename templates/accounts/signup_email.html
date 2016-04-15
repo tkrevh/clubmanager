@@ -1,0 +1,10 @@
+{% autoescape off %}
+{% load i18n %}
+
+{% trans "You have received this email because you have requested an account creation." %}
+{% trans "Please go to the following page to confirm your signing up : " %}
+{{ protocol }}://{{ domain }}{% url manager.views.signup_confirm uidb36=uid, token=token %}
+
+{% trans "Thank you." %}
+
+{% endautoescape %}

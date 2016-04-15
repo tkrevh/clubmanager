@@ -1,0 +1,35 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+    <h1>&nbsp;</h1>
+    <h2>{% trans "Members" %}</h2><a href="/member/create/" class="btna btnrf" title="{% trans 'Add new member' %}">&nbsp;</a>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+
+            <thead>
+            <tr>
+                <th>{% trans "First name" %}</th>
+                <th>{% trans "Last name" %}</th>
+                <th>{% trans "Email" %}</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in object_list %}
+            <tr>
+               <td><a href="/member/update/{{ object.pk }}">{{ object.first_name }}</a></td>
+               <td><a href="/member/update/{{ object.pk }}">{{ object.last_name }}</a></td>
+               <td><a href="/member/update/{{ object.pk }}">{{ object.email }}</a></td>
+               <td class="tds"><a href="/member/update/{{ object.pk }}" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+    
+{% endblock %}

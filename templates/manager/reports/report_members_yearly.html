@@ -1,0 +1,50 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+{% load manager_tags %}
+    <h1>&nbsp;</h1>
+    <h2>{% trans "Yearly report" %} - {{ year }}</h2>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+
+            <thead>
+            <tr>
+                <th>{% trans "Member" %}</th>
+                <th>{% trans "Starts" %}</th>
+                <th>{% trans "Total time" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in object_list %}
+            <tr>
+               <td>{{ object.last_name }} {{ object.first_name }}</a></td>
+               <td>{{ object.num_flights }}</a></td>
+               <td>{{ object.total_flight_time.total_seconds|sectodur }}</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+    
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a class="button white" href="/logbook/{{ type }}/list?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a>
+                {% endif %}
+                <span class="page-current">
+                    <b>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</b>
+                </span>
+                {% if page_obj.has_next %}
+                    <a class="button white" href="/logbook/{{ type }}/list?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}    
+    
+{% endblock %}

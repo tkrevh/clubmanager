@@ -1,0 +1,12 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+    <h2>{% trans "Edit organisation details" %}</h2>
+    <h1>&nbsp;</h1>
+
+<form action="." method="POST">{% csrf_token %}
+   {% include "base_form.html" %}
+   <label for="submit"></label>
+   <input type="submit" id="submit" class="button white" value="{% trans 'Save' %}" />
+</form>
+
+{% endblock %}

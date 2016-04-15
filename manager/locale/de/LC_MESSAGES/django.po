@@ -1,0 +1,749 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-09 01:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\manager\forms.py:25 .\templates\accounts\login.html.py:16
+msgid "Username"
+msgstr ""
+
+#: .\manager\forms.py:26
+msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+#: .\manager\forms.py:27
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
+msgstr ""
+
+#: .\manager\forms.py:28 .\templates\accounts\login.html.py:17
+msgid "Password"
+msgstr ""
+
+#: .\manager\forms.py:29
+msgid "Password confirmation"
+msgstr ""
+
+#: .\manager\forms.py:29
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: .\manager\forms.py:30 .\manager\models.py:36 .\manager\models.py:58
+#: .\templates\manager\member_list.html.py:17
+msgid "Email"
+msgstr ""
+
+#: .\manager\forms.py:31
+msgid "Email confirmation"
+msgstr ""
+
+#: .\manager\forms.py:31
+msgid ""
+"Enter your email address again. A confirmation email will be sent to this "
+"address."
+msgstr ""
+
+#: .\manager\forms.py:41
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: .\manager\forms.py:48
+msgid "A user with that email already exist."
+msgstr ""
+
+#: .\manager\forms.py:55
+msgid "The two email fields didn't match."
+msgstr ""
+
+#: .\manager\forms.py:118
+msgid "Logbook already exists for this type and date!"
+msgstr ""
+
+#: .\manager\models.py:11
+msgid "Sailplane"
+msgstr ""
+
+#: .\manager\models.py:12
+msgid "Powered Aircraft"
+msgstr ""
+
+#: .\manager\models.py:16
+msgid "Medical"
+msgstr ""
+
+#: .\manager\models.py:17
+msgid "Glider pilot license"
+msgstr ""
+
+#: .\manager\models.py:18
+msgid "Private pilot license"
+msgstr ""
+
+#: .\manager\models.py:22
+msgid "Private ownership"
+msgstr ""
+
+#: .\manager\models.py:23
+msgid "Club ownership"
+msgstr ""
+
+#: .\manager\models.py:27
+msgid "Male"
+msgstr ""
+
+#: .\manager\models.py:28
+msgid "Female"
+msgstr ""
+
+#: .\manager\models.py:34 .\manager\models.py:121
+#: .\templates\manager\purpose_list.html.py:15
+msgid "Name"
+msgstr ""
+
+#: .\manager\models.py:35
+msgid "Website"
+msgstr ""
+
+#: .\manager\models.py:37 .\manager\models.py:61
+msgid "Address"
+msgstr ""
+
+#: .\manager\models.py:38 .\manager\models.py:62
+msgid "City"
+msgstr ""
+
+#: .\manager\models.py:39 .\manager\models.py:63
+msgid "ZIP"
+msgstr ""
+
+#: .\manager\models.py:40 .\manager\models.py:64
+msgid "Country"
+msgstr ""
+
+#: .\manager\models.py:41 .\manager\models.py:65
+msgid "VAT ID"
+msgstr ""
+
+#: .\manager\models.py:42
+msgid "Phone 1"
+msgstr ""
+
+#: .\manager\models.py:43
+msgid "Phone 2"
+msgstr ""
+
+#: .\manager\models.py:44 .\manager\models.py:69
+msgid "Fax"
+msgstr ""
+
+#: .\manager\models.py:51
+msgid "Organisation"
+msgstr ""
+
+#: .\manager\models.py:52
+msgid "Organisations"
+msgstr ""
+
+#: .\manager\models.py:56 .\manager\models.py:152
+#: .\templates\manager\member_list.html.py:15
+msgid "First name"
+msgstr ""
+
+#: .\manager\models.py:57 .\manager\models.py:153
+#: .\templates\manager\member_list.html.py:16
+msgid "Last name"
+msgstr ""
+
+#: .\manager\models.py:59
+msgid "Birthday"
+msgstr ""
+
+#: .\manager\models.py:60
+msgid "Gender"
+msgstr ""
+
+#: .\manager\models.py:66
+msgid "Mobile Phone"
+msgstr ""
+
+#: .\manager\models.py:67
+msgid "Home Phone"
+msgstr ""
+
+#: .\manager\models.py:68
+msgid "Work Phone"
+msgstr ""
+
+#: .\manager\models.py:71
+msgid "Picture"
+msgstr ""
+
+#: .\manager\models.py:72 .\manager\models.py:109
+msgid "External Id"
+msgstr ""
+
+#: .\manager\models.py:74
+msgid "Date joined"
+msgstr ""
+
+#: .\manager\models.py:75
+msgid "Last login"
+msgstr ""
+
+#: .\manager\models.py:76
+msgid "Last password check"
+msgstr ""
+
+#: .\manager\models.py:82
+#: .\templates\manager\reports\report_members_yearly.html.py:15
+msgid "Member"
+msgstr ""
+
+#: .\manager\models.py:83 .\templates\manager\member_list.html.py:8
+msgid "Members"
+msgstr ""
+
+#: .\manager\models.py:86 .\manager\models.py:102 .\manager\models.py:120
+#: .\manager\models.py:133 .\templates\manager\logbook_list.html.py:16
+#: .\templates\manager\purpose_list.html.py:16
+msgid "Type"
+msgstr ""
+
+#: .\manager\models.py:87
+msgid "Document Number"
+msgstr ""
+
+#: .\manager\models.py:88
+msgid "Date of issue"
+msgstr ""
+
+#: .\manager\models.py:89
+msgid "Valid until"
+msgstr ""
+
+#: .\manager\models.py:90
+msgid "Class"
+msgstr ""
+
+#: .\manager\models.py:91 .\manager\models.py:166
+#: .\templates\manager\logbook_manage_advanced.html.py:31
+msgid "Remark"
+msgstr ""
+
+#: .\manager\models.py:98
+msgid "Document"
+msgstr ""
+
+#: .\manager\models.py:99
+msgid "Documents"
+msgstr ""
+
+#: .\manager\models.py:103
+msgid "Ownership"
+msgstr ""
+
+#: .\manager\models.py:104 .\manager\models.py:156
+#: .\templates\manager\aircraft_list.html.py:15
+msgid "Make"
+msgstr ""
+
+#: .\manager\models.py:105 .\manager\models.py:157
+#: .\templates\manager\aircraft_list.html.py:16
+msgid "Model"
+msgstr ""
+
+#: .\manager\models.py:106 .\manager\models.py:158
+msgid "Serial number"
+msgstr ""
+
+#: .\manager\models.py:107 .\manager\models.py:159
+#: .\templates\manager\aircraft_list.html.py:17
+msgid "Registration"
+msgstr ""
+
+#: .\manager\models.py:108
+msgid "Competition number"
+msgstr ""
+
+#: .\manager\models.py:116
+msgid "Airplane"
+msgstr ""
+
+#: .\manager\models.py:117 .\templates\mainmenu.html.py:18
+msgid "Airplanes"
+msgstr ""
+
+#: .\manager\models.py:128
+#: .\templates\manager\logbook_manage_advanced.html.py:21
+#: .\templates\manager\logbook_manage_advanced.html.py:45
+#: .\templates\manager\logbook_manage_advanced.html.py:68
+msgid "Purpose"
+msgstr ""
+
+#: .\manager\models.py:129
+msgid "Purposes"
+msgstr ""
+
+#: .\manager\models.py:134 .\manager\models.py:146
+#: .\templates\manager\logbook_list.html.py:15
+msgid "Date"
+msgstr ""
+
+#: .\manager\models.py:141
+msgid "Logbook"
+msgstr ""
+
+#: .\manager\models.py:142 .\templates\manager\logbook_list.html.py:8
+msgid "Logbooks"
+msgstr ""
+
+#: .\manager\models.py:154
+msgid "Instructor first name"
+msgstr ""
+
+#: .\manager\models.py:155
+msgid "Instructor last name"
+msgstr ""
+
+#: .\manager\models.py:160 .\manager\models.py:164
+#: .\templates\manager\logbook_manage.html.py:34
+#: .\templates\manager\logbook_manage_advanced.html.py:23
+#: .\templates\manager\logbook_manage_basic.html.py:34
+msgid "Block off"
+msgstr ""
+
+#: .\manager\models.py:161 .\templates\manager\logbook_manage.html.py:36
+#: .\templates\manager\logbook_manage_advanced.html.py:25
+#: .\templates\manager\logbook_manage_basic.html.py:36
+msgid "Takeoff"
+msgstr ""
+
+#: .\manager\models.py:162
+msgid "Tow release"
+msgstr ""
+
+#: .\manager\models.py:163 .\templates\manager\logbook_manage.html.py:38
+#: .\templates\manager\logbook_manage_advanced.html.py:27
+#: .\templates\manager\logbook_manage_basic.html.py:38
+msgid "Landing"
+msgstr ""
+
+#: .\manager\models.py:165
+msgid "Flight time"
+msgstr ""
+
+#: .\manager\models.py:167
+msgid "IGC file"
+msgstr ""
+
+#: .\manager\models.py:198
+msgid "Flight"
+msgstr ""
+
+#: .\manager\models.py:199 .\templates\manager\logbook_manage.html.py:23
+#: .\templates\manager\logbook_manage_advanced.html.py:11
+#: .\templates\manager\logbook_manage_basic.html.py:23
+msgid "Flights"
+msgstr ""
+
+#: .\manager\views.py:232
+msgid "Logbook for this date already exists !"
+msgstr ""
+
+#: .\templates\index.html.py:43
+msgid "Now"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:4 .\templates\reports.html.py:4
+#: .\templates\manager\aircraft_create.html.py:4
+#: .\templates\manager\aircraft_list.html.py:4
+#: .\templates\manager\flight_confirm_delete.html.py:4
+#: .\templates\manager\flight_form.html.py:4
+#: .\templates\manager\logbook_create.html.py:5
+#: .\templates\manager\logbook_list.html.py:4
+#: .\templates\manager\logbook_manage.html.py:5
+#: .\templates\manager\logbook_manage_advanced.html.py:5
+#: .\templates\manager\logbook_manage_basic.html.py:5
+#: .\templates\manager\logbook_update.html.py:4
+#: .\templates\manager\member_create.html.py:4
+#: .\templates\manager\member_list.html.py:4
+#: .\templates\manager\organisation_create.html.py:4
+#: .\templates\manager\organisation_form.html.py:4
+#: .\templates\manager\organisation_update.html.py:4
+#: .\templates\manager\purpose_create.html.py:4
+#: .\templates\manager\purpose_list.html.py:4
+#: .\templates\manager\purpose_update.html.py:4
+#: .\templates\manager\reports\report_bytype_yearly.html.py:5
+#: .\templates\manager\reports\report_list_years_allmembers.html.py:4
+#: .\templates\manager\reports\report_list_years_bytype.html.py:4
+#: .\templates\manager\reports\report_members_yearly.html.py:5
+msgid "Administration"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:4 .\templates\reports.html.py:4
+#: .\templates\manager\aircraft_create.html.py:4
+#: .\templates\manager\aircraft_list.html.py:4
+#: .\templates\manager\flight_confirm_delete.html.py:4
+#: .\templates\manager\flight_form.html.py:4
+#: .\templates\manager\logbook_create.html.py:5
+#: .\templates\manager\logbook_list.html.py:4
+#: .\templates\manager\logbook_manage.html.py:5
+#: .\templates\manager\logbook_manage_advanced.html.py:5
+#: .\templates\manager\logbook_manage_basic.html.py:5
+#: .\templates\manager\logbook_update.html.py:4
+#: .\templates\manager\member_create.html.py:4
+#: .\templates\manager\member_list.html.py:4
+#: .\templates\manager\organisation_create.html.py:4
+#: .\templates\manager\organisation_form.html.py:4
+#: .\templates\manager\organisation_update.html.py:4
+#: .\templates\manager\purpose_create.html.py:4
+#: .\templates\manager\purpose_list.html.py:4
+#: .\templates\manager\purpose_update.html.py:4
+#: .\templates\manager\reports\report_bytype_yearly.html.py:5
+#: .\templates\manager\reports\report_list_years_allmembers.html.py:4
+#: .\templates\manager\reports\report_list_years_bytype.html.py:4
+#: .\templates\manager\reports\report_members_yearly.html.py:5
+msgid "Logout"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:6 .\templates\mainmenu.html.py:8
+msgid "Club administration page"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:14
+msgid "Sailplane Logbook"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:15
+msgid "Powered Aircraft Logbook"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:16 .\templates\reports.html.py:6
+#: .\templates\reports.html.py:8
+msgid "Reports"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:17
+msgid "Pilots"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:19 .\templates\manager\purpose_list.html.py:8
+msgid "Flight purposes"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:20
+msgid "Club"
+msgstr ""
+
+#: .\templates\mainmenu.html.py:22
+msgid "Create a new club"
+msgstr ""
+
+#: .\templates\reports.html.py:13
+msgid "Sailplane - all members"
+msgstr ""
+
+#: .\templates\reports.html.py:14
+msgid "Sailplane - by type"
+msgstr ""
+
+#: .\templates\reports.html.py:16
+msgid "Powered Aircraft - all members"
+msgstr ""
+
+#: .\templates\reports.html.py:17
+msgid "Powered Aircraft - by type"
+msgstr ""
+
+#: .\templates\accounts\login.html.py:6
+msgid "Log In"
+msgstr ""
+
+#: .\templates\accounts\login.html.py:8
+msgid "Your username and password didn't match, please try again."
+msgstr ""
+
+#: .\templates\accounts\login.html.py:20
+msgid "Log in"
+msgstr ""
+
+#: .\templates\accounts\login.html.py:21
+msgid "Forgot your password?"
+msgstr ""
+
+#: .\templates\accounts\login.html.py:21
+#: .\templates\accounts\signup_form.html.py:8
+msgid "Register"
+msgstr ""
+
+#: .\templates\accounts\password_change_done.html.py:6
+msgid "Password successfully changed."
+msgstr ""
+
+#: .\templates\accounts\password_change_form.html.py:8
+msgid "Change password"
+msgstr ""
+
+#: .\templates\accounts\password_reset_complete.html.py:6
+msgid "Password reset done."
+msgstr ""
+
+#: .\templates\accounts\password_reset_confirm.html.py:8
+#: .\templates\accounts\password_reset_form.html.py:8
+msgid "Reset password"
+msgstr ""
+
+#: .\templates\accounts\password_reset_confirm.html.py:11
+msgid "This link is broken."
+msgstr ""
+
+#: .\templates\accounts\password_reset_done.html.py:6
+msgid "An email have been sent to you, with the instructions to follow."
+msgstr ""
+
+#: .\templates\accounts\password_reset_email.html.py:4
+msgid "You're receiving this e-mail because you requested a password reset."
+msgstr ""
+
+#: .\templates\accounts\password_reset_email.html.py:5
+msgid "Please go to the following page and choose a new password : "
+msgstr ""
+
+#: .\templates\accounts\password_reset_email.html.py:8
+msgid "Reminder : your username is"
+msgstr ""
+
+#: .\templates\accounts\password_reset_email.html.py:10
+#: .\templates\accounts\signup_email.html.py:8
+msgid "Thank you."
+msgstr ""
+
+#: .\templates\accounts\signup_complete.html.py:6
+msgid "Signup complete. Thank you for joining us."
+msgstr ""
+
+#: .\templates\accounts\signup_done.html.py:6
+msgid ""
+"A confirmation email have been sent to you, with the instructions to follow."
+msgstr ""
+
+#: .\templates\accounts\signup_email.html.py:4
+msgid ""
+"You have received this email because you have requested an account creation."
+msgstr ""
+
+#: .\templates\accounts\signup_email.html.py:5
+msgid "Please go to the following page to confirm your signing up : "
+msgstr ""
+
+#: .\templates\manager\aircraft_create.html.py:10
+#: .\templates\manager\flight_form.html.py:12
+#: .\templates\manager\logbook_create.html.py:13
+#: .\templates\manager\logbook_update.html.py:12
+#: .\templates\manager\member_create.html.py:10
+#: .\templates\manager\organisation_form.html.py:12
+#: .\templates\manager\purpose_create.html.py:12
+#: .\templates\manager\purpose_update.html.py:12
+msgid "Save"
+msgstr ""
+
+#: .\templates\manager\aircraft_list.html.py:8
+msgid "Aircrafts"
+msgstr ""
+
+#: .\templates\manager\aircraft_list.html.py:8
+msgid "Add new aircraft"
+msgstr ""
+
+#: .\templates\manager\aircraft_list.html.py:18
+msgid "Contest number"
+msgstr ""
+
+#: .\templates\manager\aircraft_list.html.py:30
+#: .\templates\manager\logbook_list.html.py:28
+#: .\templates\manager\logbook_manage.html.py:62
+#: .\templates\manager\logbook_manage_advanced.html.py:57
+#: .\templates\manager\logbook_manage_advanced.html.py:80
+#: .\templates\manager\logbook_manage_basic.html.py:62
+#: .\templates\manager\member_list.html.py:28
+#: .\templates\manager\purpose_list.html.py:26
+msgid "Edit"
+msgstr ""
+
+#: .\templates\manager\flight_confirm_delete.html.py:8
+msgid "Delete flight ?"
+msgstr ""
+
+#: .\templates\manager\flight_confirm_delete.html.py:11
+msgid "Yes, delete !"
+msgstr ""
+
+#: .\templates\manager\flight_form.html.py:6
+msgid "Manage flight"
+msgstr ""
+
+#: .\templates\manager\flight_form.html.py:17
+msgid "Display IGC file"
+msgstr ""
+
+#: .\templates\manager\logbook_create.html.py:7
+msgid "Create new logbook"
+msgstr ""
+
+#: .\templates\manager\logbook_list.html.py:8
+msgid "Add new logbook"
+msgstr ""
+
+#: .\templates\manager\logbook_list.html.py:27
+msgid "View"
+msgstr ""
+
+#: .\templates\manager\logbook_list.html.py:45
+#: .\templates\manager\reports\report_bytype_yearly.html.py:42
+#: .\templates\manager\reports\report_members_yearly.html.py:42
+msgid "Previous"
+msgstr ""
+
+#: .\templates\manager\logbook_list.html.py:51
+#: .\templates\manager\reports\report_bytype_yearly.html.py:48
+#: .\templates\manager\reports\report_members_yearly.html.py:48
+msgid "Next"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:7
+#: .\templates\manager\logbook_manage_advanced.html.py:7
+#: .\templates\manager\logbook_manage_basic.html.py:7
+msgid "Manage logbook"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:14
+#: .\templates\manager\logbook_manage.html.py:30
+#: .\templates\manager\logbook_manage_advanced.html.py:18
+#: .\templates\manager\logbook_manage_advanced.html.py:42
+#: .\templates\manager\logbook_manage_advanced.html.py:65
+#: .\templates\manager\logbook_manage_basic.html.py:14
+#: .\templates\manager\logbook_manage_basic.html.py:30
+msgid "Pilot"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:16
+#: .\templates\manager\logbook_manage.html.py:32
+#: .\templates\manager\logbook_manage_advanced.html.py:20
+#: .\templates\manager\logbook_manage_advanced.html.py:44
+#: .\templates\manager\logbook_manage_advanced.html.py:67
+#: .\templates\manager\logbook_manage_basic.html.py:16
+#: .\templates\manager\logbook_manage_basic.html.py:32
+#: .\templates\manager\reports\report_bytype_yearly.html.py:15
+msgid "Aircraft"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:17
+#: .\templates\manager\logbook_manage_basic.html.py:17
+msgid "Add"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:23
+#: .\templates\manager\logbook_manage_advanced.html.py:11
+#: .\templates\manager\logbook_manage_basic.html.py:23
+msgid "Add new flight"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:31
+#: .\templates\manager\logbook_manage_advanced.html.py:19
+#: .\templates\manager\logbook_manage_advanced.html.py:43
+#: .\templates\manager\logbook_manage_advanced.html.py:66
+#: .\templates\manager\logbook_manage_basic.html.py:31
+msgid "Instructor"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:37
+#: .\templates\manager\logbook_manage_advanced.html.py:26
+#: .\templates\manager\logbook_manage_basic.html.py:37
+msgid "Release"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:40
+#: .\templates\manager\logbook_manage_advanced.html.py:29
+#: .\templates\manager\logbook_manage_basic.html.py:40
+msgid "Block on"
+msgstr ""
+
+#: .\templates\manager\logbook_manage.html.py:63
+#: .\templates\manager\logbook_manage_advanced.html.py:58
+#: .\templates\manager\logbook_manage_advanced.html.py:81
+#: .\templates\manager\logbook_manage_basic.html.py:63
+msgid "Delete"
+msgstr ""
+
+#: .\templates\manager\logbook_manage_advanced.html.py:56
+msgid "S"
+msgstr ""
+
+#: .\templates\manager\logbook_manage_advanced.html.py:64
+msgid "New"
+msgstr ""
+
+#: .\templates\manager\logbook_manage_advanced.html.py:79
+msgid "A"
+msgstr ""
+
+#: .\templates\manager\logbook_update.html.py:6
+msgid "Change logbook"
+msgstr ""
+
+#: .\templates\manager\member_list.html.py:8
+msgid "Add new member"
+msgstr ""
+
+#: .\templates\manager\organisation_create.html.py:6
+#: .\templates\manager\organisation_form.html.py:6
+msgid "Create new organisation"
+msgstr ""
+
+#: .\templates\manager\organisation_update.html.py:6
+msgid "Edit organisation details"
+msgstr ""
+
+#: .\templates\manager\purpose_create.html.py:6
+msgid "Create purpose"
+msgstr ""
+
+#: .\templates\manager\purpose_list.html.py:8
+msgid "Add new purpose"
+msgstr ""
+
+#: .\templates\manager\purpose_update.html.py:6
+msgid "Change purpose"
+msgstr ""
+
+#: .\templates\manager\reports\report_bytype_yearly.html.py:9
+#: .\templates\manager\reports\report_members_yearly.html.py:9
+msgid "Yearly report"
+msgstr ""
+
+#: .\templates\manager\reports\report_bytype_yearly.html.py:16
+#: .\templates\manager\reports\report_members_yearly.html.py:16
+msgid "Starts"
+msgstr ""
+
+#: .\templates\manager\reports\report_bytype_yearly.html.py:17
+#: .\templates\manager\reports\report_members_yearly.html.py:17
+msgid "Total time"
+msgstr ""
+
+#: .\templates\manager\reports\report_list_years_allmembers.html.py:8
+#: .\templates\manager\reports\report_list_years_bytype.html.py:8
+msgid "Select a year"
+msgstr ""

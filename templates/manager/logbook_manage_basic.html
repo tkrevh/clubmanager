@@ -1,0 +1,130 @@
+{% extends "index.html" %}
+{% block content %}
+{% load i18n %}
+       <h2>{% trans "Manage logbook" %}</h2>
+       <h1>&nbsp;</h1>
+
+   <form action="/logbook/{{ type }}/manage/{{ logbook.pk }}/create/flight/" method="POST">{% csrf_token %}
+
+        <div class="ui-widget">
+            <input id="id_pilot" name="pilot" type="hidden">   
+            <input id="pilot_ajax" name="pilot_ajax" type="text" placeholder="{% trans 'Pilot' %}" onkeyup="searchPilot();" autofocus required>   
+            <input id="id_aircraft" name="aircraft" type="hidden">   
+            <input id="aircraft_ajax" name="aircraft_ajax" type="text" placeholder="{% trans 'Aircraft' %}" onkeyup="searchAircraft();" required>
+            <input type="submit" id="inlinesubmit" class="button white" value="{% trans 'Add' %}" />
+        </div>
+
+   </form>
+
+   <br/>
+    <h2>{% trans "Flights" %} - {{ type }} </h2><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/create/flight/" class="btna btnrf" title="{% trans 'Add new flight' %}">&nbsp;</a>
+    <fieldset>
+        <table>
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>{% trans "Pilot" %}</th>
+                <th>{% trans "Instructor" %}</th>
+                <th>{% trans "Aircraft" %}</th>
+                {% ifequal type "powered" %}
+                <th>{% trans "Block off" %}</th>
+                {% endifequal %}
+                <th>{% trans "Takeoff" %}</th>
+                <th>{% trans "Release" %}</th>
+                <th>{% trans "Landing" %}</th>
+                {% ifequal type "powered" %}
+                <th>{% trans "Block on" %}</th>
+                {% endifequal %}
+                <th class="ths">&nbsp;</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in flights %}
+            <tr>
+               <td>{{ object.pk }}</td>
+               <td>{{ object.first_name }} {{ object.last_name }}</td>
+               <td>{{ object.instructor_first_name }} {{ object.instructor_last_name }}</td>
+               <td>{{ object.model }} ({{ object.registration }})</td>
+               {% ifequal type "powered" %}
+               <td id="time_block_off-{{ object.pk }}">{% if object.time_block_off %}{{ object.time_block_off|date:'H:i' }}{% else %}<a class="button white" href="#" onclick="setFlightEventTime({{ object.pk }}, 'time_block_off');">Now</a>{% endif%}</td>
+               {% endifequal %}
+               <td id="time_takeoff-{{ object.pk }}">{% if object.time_takeoff %}{{ object.time_takeoff|date:'H:i' }}{% else %}<a class="button white" href="#" onclick="setFlightEventTime({{ object.pk }}, 'time_takeoff');">Now</a>{% endif%}</td>
+               <td id="time_tow_release-{{ object.pk }}">{% if object.time_tow_release %}{{ object.time_tow_release|date:'H:i' }}{% else %}<a class="button white" href="#" onclick="setFlightEventTime({{ object.pk }}, 'time_tow_release');">Now</a>{% endif%}</td>
+               <td id="time_landing-{{ object.pk }}">{% if object.time_landing %}{{ object.time_landing|date:'H:i' }}{% else %}<a class="button white" href="#" onclick="setFlightEventTime({{ object.pk }}, 'time_landing');">Now</a>{% endif%}</td>
+               {% ifequal type "powered" %}
+               <td id="time_block_on-{{ object.pk }}">{% if object.time_block_on %}{{ object.time_block_on|date:'H:i' }}{% else %}<a class="button white" href="#" onclick="setFlightEventTime({{ object.pk }}, 'time_block_on');">Now</a>{% endif%}</td>
+               {% endifequal %}
+               <td class="tds"><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/edit/flight/{{ object.pk }}/" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+               <td class="tds"><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/delete/flight/{{ object.pk }}/" class="btnd" title="{% trans 'Delete' %}">&nbsp;</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+   
+   Number.prototype.pad = function(size){
+      if(typeof(size) !== "number"){size = 2;}
+      var s = String(this);
+      while (s.length < size) s = "0" + s;
+      return s;
+    }
+    
+   function searchPilot() 
+   {
+      var search = $('#pilot_ajax').val()
+      Dajaxice.manager.get_pilot(pilotCallback, {'search_data': search});
+   }
+    
+   function pilotCallback(data) 
+   {
+      $( "#pilot_ajax" ).autocomplete({source: data, delay: 500,
+         select: function(event, ui) {
+            var selectedObj = ui.item;
+            $('#id_pilot').val(selectedObj.id);
+            return true;
+		}});
+   }
+
+   function searchAircraft() 
+   {
+      var search = $('#aircraft_ajax').val()
+      Dajaxice.manager.get_aircraft(aircraftCallback, {'search_data': search, 'type': '{{ type }}'});
+   }
+    
+   function aircraftCallback(data) 
+   {
+      $( "#aircraft_ajax" ).autocomplete({source: data, delay: 500, 
+         select: function(event, ui) {
+            var selectedObj = ui.item;
+            $('#id_aircraft').val(selectedObj.id);
+            return true;
+		}});
+   }
+   
+   function setFlightEventTime(flight_id, event_name)
+   {
+      var date = new Date();
+      var minutes = date.getMinutes();
+      var hour = date.getHours();
+      var timeString = hour.pad() + ":" + minutes.pad();
+      Dajaxice.manager.set_flight_event_time(flightEventTimeCallback, {'flight_id': flight_id, 'event_name': event_name, 'time': timeString});
+   }
+
+   function flightEventTimeCallback(data)
+   {
+      $( "#"+data.event_name+"-"+data.flight_id ).children().replaceWith(function(){ return data.time; });
+   }
+</script>
+{% endblock %}

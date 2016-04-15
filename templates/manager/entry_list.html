@@ -1,0 +1,34 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+    <h1>&nbsp;</h1>
+    <h2>{% trans "Entries" %}</h2><a href="/entry/create/" class="btna btnrf" title="{% trans 'Add new entry' %}">&nbsp;</a>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+
+            <thead>
+            <tr>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Content" %}</th>
+                <th>{% trans "Created" %}</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in object_list %}
+            <tr>
+               <td><a href="/entry/update/{{ object.pk }}">{{ object.name }}</a></td>
+               <td><a href="/entry/update/{{ object.pk }}">{{ object.content|slice:":150" }}...</a></td>
+               <td><a href="/entry/update/{{ object.pk }}">{{ object.date_create }}</a></td>
+               <td class="tds"><a href="/entry/update/{{ object.pk }}" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+{% endblock %}

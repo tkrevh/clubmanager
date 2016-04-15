@@ -1,0 +1,32 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+    <h1>&nbsp;</h1>
+    <h2>{% trans "Listings" %}</h2><a href="/listing/create/" class="btna btnrf" title="{% trans 'Add new aircraft' %}">&nbsp;</a>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+
+            <thead>
+            <tr>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Created" %}</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in object_list %}
+            <tr>
+               <td><a href="/listing/update/{{ object.pk }}">{{ object.name }}</a></td>
+               <td><a href="/listing/update/{{ object.pk }}">{{ object.date_create }}</a></td>
+               <td class="tds"><a href="/listing/update/{{ object.pk }}" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+{% endblock %}

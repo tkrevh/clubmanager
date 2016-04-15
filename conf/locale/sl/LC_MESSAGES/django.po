@@ -1,0 +1,774 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-17 22:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\manager\forms.py:25 .\templates\accounts\login.html.py:16
+msgid "Username"
+msgstr "Uporabniško ime"
+
+#: .\manager\forms.py:26
+msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+"Obvezno polje. 30 znakov ali manj. Dovoljene so črke, številke in @/./+/-/_"
+
+#: .\manager\forms.py:27
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
+msgstr "Dovoljene so le črke, številke in @/./+/-/_"
+
+#: .\manager\forms.py:28 .\templates\accounts\login.html.py:17
+msgid "Password"
+msgstr "Geslo"
+
+#: .\manager\forms.py:29
+msgid "Password confirmation"
+msgstr "Potrditev gesla"
+
+#: .\manager\forms.py:29
+msgid "Enter the same password as above, for verification."
+msgstr "Vnesite isto geslo kot zgoraj za verifikacijo."
+
+#: .\manager\forms.py:30 .\manager\models.py:41 .\manager\models.py:63
+#: .\templates\manager\member_list.html.py:12
+msgid "Email"
+msgstr "Email"
+
+#: .\manager\forms.py:31
+msgid "Email confirmation"
+msgstr "Potrditev Email"
+
+#: .\manager\forms.py:31
+msgid ""
+"Enter your email address again. A confirmation email will be sent to this "
+"address."
+msgstr ""
+"Ponovno vnesite vaš email naslov. Potrditveni email bo poslan na ta naslov."
+
+#: .\manager\forms.py:41
+msgid "The two password fields didn't match."
+msgstr "Gesli se ne ujemata."
+
+#: .\manager\forms.py:48
+msgid "A user with that email already exist."
+msgstr "Uporabnik s tem email naslovom že obstaja."
+
+#: .\manager\forms.py:55
+msgid "The two email fields didn't match."
+msgstr "Email naslova se ne ujemata."
+
+#: .\manager\forms.py:124
+msgid "Logbook already exists for this type and date!"
+msgstr "Dnevnik letenja že obstaja za ta datum!"
+
+#: .\manager\models.py:11
+msgid "Sailplane"
+msgstr "Jadralno letalo"
+
+#: .\manager\models.py:12
+msgid "Powered Aircraft"
+msgstr "Motorno letalo"
+
+#: .\manager\models.py:16
+msgid "Non-commerical"
+msgstr "Nekomercialno"
+
+#: .\manager\models.py:17
+msgid "Commercial"
+msgstr "Komercialno"
+
+#: .\manager\models.py:21
+msgid "Medical"
+msgstr "Zdravniško"
+
+#: .\manager\models.py:22
+msgid "Glider pilot license"
+msgstr "Licenca jadralnega pilota"
+
+#: .\manager\models.py:23
+msgid "Private pilot license"
+msgstr "Licenca motornega pilota"
+
+#: .\manager\models.py:27
+msgid "Private ownership"
+msgstr "Zasebno lastništvo"
+
+#: .\manager\models.py:28
+msgid "Club ownership"
+msgstr "Klubsko lastništvo"
+
+#: .\manager\models.py:32
+msgid "Male"
+msgstr "Moški"
+
+#: .\manager\models.py:33
+msgid "Female"
+msgstr "Ženska"
+
+#: .\manager\models.py:39 .\manager\models.py:126
+#: .\templates\manager\purpose_list.html.py:11
+msgid "Name"
+msgstr "Ime"
+
+#: .\manager\models.py:40
+msgid "Website"
+msgstr "Spletni naslov"
+
+#: .\manager\models.py:42 .\manager\models.py:66
+msgid "Address"
+msgstr "Naslov"
+
+#: .\manager\models.py:43 .\manager\models.py:67
+msgid "City"
+msgstr "Mesto"
+
+#: .\manager\models.py:44 .\manager\models.py:68
+msgid "ZIP"
+msgstr "Poštna številka"
+
+#: .\manager\models.py:45 .\manager\models.py:69
+msgid "Country"
+msgstr "Država"
+
+#: .\manager\models.py:46 .\manager\models.py:70
+msgid "VAT ID"
+msgstr "Davčna številka"
+
+#: .\manager\models.py:47
+msgid "Phone 1"
+msgstr "Telefon 1"
+
+#: .\manager\models.py:48
+msgid "Phone 2"
+msgstr "Telefon 2"
+
+#: .\manager\models.py:49 .\manager\models.py:74
+msgid "Fax"
+msgstr "Faks"
+
+#: .\manager\models.py:56
+msgid "Organisation"
+msgstr "Klub"
+
+#: .\manager\models.py:57
+msgid "Organisations"
+msgstr "Klubi"
+
+#: .\manager\models.py:61 .\manager\models.py:158
+#: .\templates\manager\member_list.html.py:10
+msgid "First name"
+msgstr "Ime"
+
+#: .\manager\models.py:62 .\manager\models.py:159
+#: .\templates\manager\member_list.html.py:11
+msgid "Last name"
+msgstr "Priimek"
+
+#: .\manager\models.py:64
+msgid "Birthday"
+msgstr "Rojstni dan"
+
+#: .\manager\models.py:65
+msgid "Gender"
+msgstr "Spol"
+
+#: .\manager\models.py:71
+msgid "Mobile Phone"
+msgstr "Mobilni telefon"
+
+#: .\manager\models.py:72
+msgid "Home Phone"
+msgstr "Telefon doma"
+
+#: .\manager\models.py:73
+msgid "Work Phone"
+msgstr "Telefon v službi"
+
+#: .\manager\models.py:76
+msgid "Picture"
+msgstr "Slika"
+
+#: .\manager\models.py:77 .\manager\models.py:114
+msgid "External Id"
+msgstr "Zunanja id številka"
+
+#: .\manager\models.py:79
+msgid "Date joined"
+msgstr "Datum pridružitve"
+
+#: .\manager\models.py:80
+msgid "Last login"
+msgstr "Zadnja prijava v sistem"
+
+#: .\manager\models.py:81
+msgid "Last password check"
+msgstr "Zadnje preverjanje gesla"
+
+#: .\manager\models.py:87
+#: .\templates\manager\reports\report_members_yearly.html.py:11
+msgid "Member"
+msgstr "Član"
+
+#: .\manager\models.py:88 .\templates\manager\member_list.html.py:4
+msgid "Members"
+msgstr "Člani"
+
+#: .\manager\models.py:91 .\manager\models.py:107 .\manager\models.py:125
+#: .\manager\models.py:139 .\templates\manager\logbook_list.html.py:11
+#: .\templates\manager\member_create.html.py:19
+#: .\templates\manager\purpose_list.html.py:12
+msgid "Type"
+msgstr "Tip"
+
+#: .\manager\models.py:92 .\templates\manager\member_create.html.py:20
+msgid "Document Number"
+msgstr "Št. dokumenta"
+
+#: .\manager\models.py:93 .\templates\manager\member_create.html.py:21
+msgid "Date of issue"
+msgstr "Datum izdaje"
+
+#: .\manager\models.py:94 .\templates\manager\member_create.html.py:22
+msgid "Valid until"
+msgstr "Veljavno do"
+
+#: .\manager\models.py:95
+msgid "Class"
+msgstr "Razred"
+
+#: .\manager\models.py:96 .\manager\models.py:172
+#: .\templates\manager\logbook_manage_advanced.html.py:28
+#: .\templates\manager\reports\report_detailed.html.py:42
+msgid "Remark"
+msgstr "Opomba"
+
+#: .\manager\models.py:103 .\templates\manager\document_form.html.py:3
+msgid "Document"
+msgstr "Dokument"
+
+#: .\manager\models.py:104 .\templates\manager\member_create.html.py:13
+msgid "Documents"
+msgstr "Dokumenti"
+
+#: .\manager\models.py:108
+msgid "Ownership"
+msgstr "Lastništvo"
+
+#: .\manager\models.py:109 .\manager\models.py:162
+#: .\templates\manager\aircraft_list.html.py:10
+msgid "Make"
+msgstr "Znamka"
+
+#: .\manager\models.py:110 .\manager\models.py:163
+#: .\templates\manager\aircraft_list.html.py:11
+msgid "Model"
+msgstr "Model"
+
+#: .\manager\models.py:111 .\manager\models.py:164
+msgid "Serial number"
+msgstr "Serijska številka"
+
+#: .\manager\models.py:112 .\manager\models.py:165
+#: .\templates\manager\aircraft_list.html.py:12
+msgid "Registration"
+msgstr "Registracija"
+
+#: .\manager\models.py:113
+msgid "Competition number"
+msgstr "Tekmovalna oznaka"
+
+#: .\manager\models.py:121
+msgid "Airplane"
+msgstr "Letalo"
+
+#: .\manager\models.py:122 .\templates\mainmenu.html.py:16
+msgid "Airplanes"
+msgstr "Letala"
+
+#: .\manager\models.py:127 .\templates\manager\purpose_list.html.py:13
+msgid "Billing type"
+msgstr "Tip obračuna"
+
+#: .\manager\models.py:134
+#: .\templates\manager\logbook_manage_advanced.html.py:18
+#: .\templates\manager\logbook_manage_advanced.html.py:42
+#: .\templates\manager\logbook_manage_advanced.html.py:65
+#: .\templates\manager\reports\report_detailed.html.py:32
+msgid "Purpose"
+msgstr "Namen"
+
+#: .\manager\models.py:135
+msgid "Purposes"
+msgstr "Nameni"
+
+#: .\manager\models.py:140 .\manager\models.py:152
+#: .\templates\manager\logbook_list.html.py:10
+#: .\templates\manager\reports\report_detailed.html.py:28
+msgid "Date"
+msgstr "Datum"
+
+#: .\manager\models.py:147
+msgid "Logbook"
+msgstr "Dnevnik letenja"
+
+#: .\manager\models.py:148 .\templates\manager\logbook_list.html.py:4
+msgid "Logbooks"
+msgstr "Dnevniki letenja"
+
+#: .\manager\models.py:160
+msgid "Instructor first name"
+msgstr "Ime inštruktorja"
+
+#: .\manager\models.py:161
+msgid "Instructor last name"
+msgstr "Priimek inštruktorja"
+
+#: .\manager\models.py:166 .\manager\models.py:170
+#: .\templates\manager\logbook_manage.html.py:31
+#: .\templates\manager\logbook_manage_advanced.html.py:20
+#: .\templates\manager\logbook_manage_basic.html.py:31
+#: .\templates\manager\reports\report_detailed.html.py:34
+msgid "Block off"
+msgstr "Block off"
+
+#: .\manager\models.py:167 .\templates\manager\logbook_manage.html.py:33
+#: .\templates\manager\logbook_manage_advanced.html.py:22
+#: .\templates\manager\logbook_manage_basic.html.py:33
+#: .\templates\manager\reports\report_detailed.html.py:36
+msgid "Takeoff"
+msgstr "Vzletel"
+
+#: .\manager\models.py:168
+msgid "Tow release"
+msgstr "Odpel"
+
+#: .\manager\models.py:169 .\templates\manager\logbook_manage.html.py:35
+#: .\templates\manager\logbook_manage_advanced.html.py:24
+#: .\templates\manager\logbook_manage_basic.html.py:35
+#: .\templates\manager\reports\report_detailed.html.py:38
+msgid "Landing"
+msgstr "Pristal"
+
+#: .\manager\models.py:171
+#: .\templates\manager\reports\report_detailed.html.py:43
+msgid "Flight time"
+msgstr "Trajanje leta"
+
+#: .\manager\models.py:173
+msgid "IGC file"
+msgstr "IGC datoteka"
+
+#: .\manager\models.py:204
+msgid "Flight"
+msgstr "Let"
+
+#: .\manager\models.py:205 .\templates\manager\logbook_manage.html.py:20
+#: .\templates\manager\logbook_manage_advanced.html.py:8
+#: .\templates\manager\logbook_manage_basic.html.py:20
+#: .\templates\manager\reports\report_detailed.html.py:23
+msgid "Flights"
+msgstr "Leti"
+
+#: .\manager\views.py:274
+msgid "Logbook for this date already exists !"
+msgstr "Dnevnik letenja za ta datum že obstaja !"
+
+#: .\templates\index.html.py:38
+msgid "Administration"
+msgstr "Administracija"
+
+#: .\templates\index.html.py:38
+msgid "Logout"
+msgstr "Odjavi se"
+
+#: .\templates\index.html.py:58
+msgid "Now"
+msgstr "Zdaj"
+
+#: .\templates\mainmenu.html.py:4 .\templates\mainmenu.html.py:6
+msgid "Club administration page"
+msgstr "Administracija kluba"
+
+#: .\templates\mainmenu.html.py:12
+msgid "Sailplane Logbook"
+msgstr "Jadralni dnevnik"
+
+#: .\templates\mainmenu.html.py:13
+msgid "Powered Aircraft Logbook"
+msgstr "Motorni dnevnik"
+
+#: .\templates\mainmenu.html.py:14 .\templates\reports.html.py:4
+#: .\templates\reports.html.py:6
+msgid "Reports"
+msgstr "Poročila"
+
+#: .\templates\mainmenu.html.py:15
+msgid "Pilots"
+msgstr "Piloti"
+
+#: .\templates\mainmenu.html.py:17 .\templates\manager\purpose_list.html.py:5
+msgid "Flight purposes"
+msgstr "Nameni letenja"
+
+#: .\templates\mainmenu.html.py:18
+msgid "Club"
+msgstr "Klub"
+
+#: .\templates\mainmenu.html.py:20
+msgid "Create a new club"
+msgstr "Ustvari nov klub"
+
+#: .\templates\reports.html.py:11
+msgid "Sailplane - all members"
+msgstr "Jadralno - vsi člani"
+
+#: .\templates\reports.html.py:12
+msgid "Sailplane - by type"
+msgstr "Jadralno - po tipu"
+
+#: .\templates\reports.html.py:13
+msgid "Sailplane - detailed"
+msgstr "Jadralno - detajlno"
+
+#: .\templates\reports.html.py:15
+msgid "Powered Aircraft - all members"
+msgstr "Motorno - vsi člani"
+
+#: .\templates\reports.html.py:16
+msgid "Powered Aircraft - by type"
+msgstr "Motorno - po tipu"
+
+#: .\templates\reports.html.py:17
+msgid "Powered Aircraft - detailed"
+msgstr "Motorno - detajlno"
+
+#: .\templates\accounts\login.html.py:6
+msgid "Log In"
+msgstr "Prijava"
+
+#: .\templates\accounts\login.html.py:8
+msgid "Your username and password didn't match, please try again."
+msgstr "Uporabniško ime in geslo se ne ujemata, prosimo poizkusite znova."
+
+#: .\templates\accounts\login.html.py:20
+msgid "Log in"
+msgstr "Prijava"
+
+#: .\templates\accounts\login.html.py:21
+msgid "Forgot your password?"
+msgstr "Pozabljeno geslo?"
+
+#: .\templates\accounts\login.html.py:21
+#: .\templates\accounts\signup_form.html.py:8
+msgid "Register"
+msgstr "Registracija"
+
+#: .\templates\accounts\password_change_done.html.py:6
+msgid "Password successfully changed."
+msgstr "Geslo uspešno spremenjeno."
+
+#: .\templates\accounts\password_change_form.html.py:8
+msgid "Change password"
+msgstr "Spremeni geslo"
+
+#: .\templates\accounts\password_reset_complete.html.py:6
+msgid "Password reset done."
+msgstr "Geslo ponastavljeno."
+
+#: .\templates\accounts\password_reset_confirm.html.py:8
+#: .\templates\accounts\password_reset_form.html.py:8
+msgid "Reset password"
+msgstr "Ponastavi geslo"
+
+#: .\templates\accounts\password_reset_confirm.html.py:11
+msgid "This link is broken."
+msgstr "Povezava ne deluje."
+
+#: .\templates\accounts\password_reset_done.html.py:6
+msgid "An email have been sent to you, with the instructions to follow."
+msgstr "Poslan vam je bil email z nadaljnimi informacijami."
+
+#: .\templates\accounts\password_reset_email.html.py:4
+msgid "You're receiving this e-mail because you requested a password reset."
+msgstr "To sporočilo ste prejeli, ker ste zahtevali ponastavitev gesla."
+
+#: .\templates\accounts\password_reset_email.html.py:5
+msgid "Please go to the following page and choose a new password : "
+msgstr "Prosimo pojdite na naslednji spletni naslov in izberite novo geslo : "
+
+#: .\templates\accounts\password_reset_email.html.py:8
+msgid "Reminder : your username is"
+msgstr "Opomnik : vaše uporabniško ime je"
+
+#: .\templates\accounts\password_reset_email.html.py:10
+#: .\templates\accounts\signup_email.html.py:8
+msgid "Thank you."
+msgstr "Hvala vam."
+
+#: .\templates\accounts\signup_complete.html.py:6
+msgid "Signup complete. Thank you for joining us."
+msgstr "Registracija zaključena. Hvala da ste se nam pridružili."
+
+#: .\templates\accounts\signup_done.html.py:6
+msgid ""
+"A confirmation email have been sent to you, with the instructions to follow."
+msgstr ""
+
+#: .\templates\accounts\signup_email.html.py:4
+msgid ""
+"You have received this email because you have requested an account creation."
+msgstr "To sporočilo ste prejeli, ker želite ustvariti nov uporabniški profil."
+
+#: .\templates\accounts\signup_email.html.py:5
+msgid "Please go to the following page to confirm your signing up : "
+msgstr ""
+"Prosimo pojdite na naslednji spletni naslov za potrditev registracije : "
+
+#: .\templates\manager\aircraft_create.html.py:7
+#: .\templates\manager\document_form.html.py:9
+#: .\templates\manager\flight_form.html.py:9
+#: .\templates\manager\logbook_create.html.py:10
+#: .\templates\manager\logbook_update.html.py:9
+#: .\templates\manager\member_create.html.py:7
+#: .\templates\manager\organisation_create.html.py:9
+#: .\templates\manager\organisation_update.html.py:9
+#: .\templates\manager\purpose_create.html.py:9
+#: .\templates\manager\purpose_update.html.py:9
+msgid "Save"
+msgstr "Shrani"
+
+#: .\templates\manager\aircraft_list.html.py:4
+msgid "Aircrafts"
+msgstr "Letala"
+
+#: .\templates\manager\aircraft_list.html.py:4
+msgid "Add new aircraft"
+msgstr "Dodaj novo letalo"
+
+#: .\templates\manager\aircraft_list.html.py:13
+msgid "Contest number"
+msgstr "Tekmovalna oznaka"
+
+#: .\templates\manager\aircraft_list.html.py:24
+#: .\templates\manager\logbook_list.html.py:22
+#: .\templates\manager\logbook_manage.html.py:59
+#: .\templates\manager\logbook_manage_advanced.html.py:54
+#: .\templates\manager\logbook_manage_advanced.html.py:77
+#: .\templates\manager\logbook_manage_basic.html.py:59
+#: .\templates\manager\member_create.html.py:34
+#: .\templates\manager\member_list.html.py:22
+#: .\templates\manager\purpose_list.html.py:23
+msgid "Edit"
+msgstr "Uredi"
+
+#: .\templates\manager\flight_confirm_delete.html.py:5
+msgid "Delete flight ?"
+msgstr "Briši let ?"
+
+#: .\templates\manager\flight_confirm_delete.html.py:8
+msgid "Yes, delete !"
+msgstr "Da, briši !"
+
+#: .\templates\manager\flight_form.html.py:3
+msgid "Manage flight"
+msgstr "Uredi let"
+
+#: .\templates\manager\flight_form.html.py:14
+msgid "Display IGC file"
+msgstr "Prikaži let"
+
+#: .\templates\manager\logbook_create.html.py:4
+msgid "Create new logbook"
+msgstr "Ustvari nov dnevnik"
+
+#: .\templates\manager\logbook_list.html.py:4
+msgid "Add new logbook"
+msgstr "Dodaj nov dnevnik"
+
+#: .\templates\manager\logbook_list.html.py:21
+msgid "View"
+msgstr "Predogled"
+
+#: .\templates\manager\logbook_list.html.py:39
+#: .\templates\manager\reports\report_bytype_yearly.html.py:39
+#: .\templates\manager\reports\report_members_yearly.html.py:38
+msgid "Previous"
+msgstr "Prejšnja"
+
+#: .\templates\manager\logbook_list.html.py:45
+#: .\templates\manager\reports\report_bytype_yearly.html.py:45
+#: .\templates\manager\reports\report_members_yearly.html.py:44
+msgid "Next"
+msgstr "Naslednja"
+
+#: .\templates\manager\logbook_manage.html.py:4
+#: .\templates\manager\logbook_manage_advanced.html.py:4
+#: .\templates\manager\logbook_manage_basic.html.py:4
+msgid "Manage logbook"
+msgstr "Uredi dnevnik"
+
+#: .\templates\manager\logbook_manage.html.py:11
+#: .\templates\manager\logbook_manage.html.py:27
+#: .\templates\manager\logbook_manage_advanced.html.py:15
+#: .\templates\manager\logbook_manage_advanced.html.py:39
+#: .\templates\manager\logbook_manage_advanced.html.py:62
+#: .\templates\manager\logbook_manage_basic.html.py:11
+#: .\templates\manager\logbook_manage_basic.html.py:27
+#: .\templates\manager\reports\report_detailed.html.py:12
+#: .\templates\manager\reports\report_detailed.html.py:29
+msgid "Pilot"
+msgstr "Pilot"
+
+#: .\templates\manager\logbook_manage.html.py:13
+#: .\templates\manager\logbook_manage.html.py:29
+#: .\templates\manager\logbook_manage_advanced.html.py:17
+#: .\templates\manager\logbook_manage_advanced.html.py:41
+#: .\templates\manager\logbook_manage_advanced.html.py:64
+#: .\templates\manager\logbook_manage_basic.html.py:13
+#: .\templates\manager\logbook_manage_basic.html.py:29
+#: .\templates\manager\reports\report_bytype_yearly.html.py:11
+#: .\templates\manager\reports\report_detailed.html.py:14
+#: .\templates\manager\reports\report_detailed.html.py:31
+#: .\templates\manager\reports\report_detailed.html.py:82
+msgid "Aircraft"
+msgstr "Letalo"
+
+#: .\templates\manager\logbook_manage.html.py:14
+#: .\templates\manager\logbook_manage_basic.html.py:14
+msgid "Add"
+msgstr "Dodaj"
+
+#: .\templates\manager\logbook_manage.html.py:20
+#: .\templates\manager\logbook_manage_advanced.html.py:8
+#: .\templates\manager\logbook_manage_basic.html.py:20
+msgid "Add new flight"
+msgstr "Dodaj nov let"
+
+#: .\templates\manager\logbook_manage.html.py:28
+#: .\templates\manager\logbook_manage_advanced.html.py:16
+#: .\templates\manager\logbook_manage_advanced.html.py:40
+#: .\templates\manager\logbook_manage_advanced.html.py:63
+#: .\templates\manager\logbook_manage_basic.html.py:28
+#: .\templates\manager\reports\report_detailed.html.py:30
+msgid "Instructor"
+msgstr "Inštruktor"
+
+#: .\templates\manager\logbook_manage.html.py:34
+#: .\templates\manager\logbook_manage_advanced.html.py:23
+#: .\templates\manager\logbook_manage_basic.html.py:34
+#: .\templates\manager\reports\report_detailed.html.py:37
+msgid "Release"
+msgstr "Odpel"
+
+#: .\templates\manager\logbook_manage.html.py:37
+#: .\templates\manager\logbook_manage_advanced.html.py:26
+#: .\templates\manager\logbook_manage_basic.html.py:37
+#: .\templates\manager\reports\report_detailed.html.py:40
+msgid "Block on"
+msgstr "Block on"
+
+#: .\templates\manager\logbook_manage.html.py:60
+#: .\templates\manager\logbook_manage_advanced.html.py:55
+#: .\templates\manager\logbook_manage_advanced.html.py:78
+#: .\templates\manager\logbook_manage_basic.html.py:60
+msgid "Delete"
+msgstr "Briši"
+
+#: .\templates\manager\logbook_manage_advanced.html.py:53
+msgid "S"
+msgstr "S"
+
+#: .\templates\manager\logbook_manage_advanced.html.py:61
+msgid "New"
+msgstr "Nov"
+
+#: .\templates\manager\logbook_manage_advanced.html.py:76
+msgid "A"
+msgstr "D"
+
+#: .\templates\manager\logbook_update.html.py:3
+msgid "Change logbook"
+msgstr "Uredi dnevnik"
+
+#: .\templates\manager\member_create.html.py:13
+msgid "Add new document"
+msgstr "Dodaj člana"
+
+#: .\templates\manager\member_list.html.py:4
+msgid "Add new member"
+msgstr "Dodaj člana"
+
+#: .\templates\manager\organisation_create.html.py:3
+msgid "Create new organisation"
+msgstr "Ustvari nov klub"
+
+#: .\templates\manager\organisation_update.html.py:3
+msgid "Edit organisation details"
+msgstr "Uredi podatke kluba"
+
+#: .\templates\manager\purpose_create.html.py:3
+msgid "Create purpose"
+msgstr "Ustvari nov namen"
+
+#: .\templates\manager\purpose_list.html.py:5
+msgid "Add new purpose"
+msgstr "Dodaj nov namen"
+
+#: .\templates\manager\purpose_update.html.py:3
+msgid "Change purpose"
+msgstr "Uredi namen"
+
+#: .\templates\manager\reports\report_bytype_yearly.html.py:5
+#: .\templates\manager\reports\report_members_yearly.html.py:5
+msgid "Yearly report"
+msgstr "Letno poročilo"
+
+#: .\templates\manager\reports\report_bytype_yearly.html.py:12
+#: .\templates\manager\reports\report_detailed.html.py:83
+#: .\templates\manager\reports\report_detailed.html.py:111
+#: .\templates\manager\reports\report_members_yearly.html.py:12
+msgid "Starts"
+msgstr "Št. štartov"
+
+#: .\templates\manager\reports\report_bytype_yearly.html.py:13
+#: .\templates\manager\reports\report_detailed.html.py:84
+#: .\templates\manager\reports\report_detailed.html.py:112
+#: .\templates\manager\reports\report_members_yearly.html.py:13
+msgid "Total time"
+msgstr "Skupen nalet"
+
+#: .\templates\manager\reports\report_detailed.html.py:5
+msgid "Detailed report"
+msgstr "Detajlno poročilo"
+
+#: .\templates\manager\reports\report_detailed.html.py:15
+msgid "Date from"
+msgstr "Datum od"
+
+#: .\templates\manager\reports\report_detailed.html.py:16
+msgid "Date to"
+msgstr "Datum do"
+
+#: .\templates\manager\reports\report_detailed.html.py:17
+msgid "Text search"
+msgstr "Išči..."
+
+#: .\templates\manager\reports\report_detailed.html.py:18
+msgid "Search"
+msgstr "Išči"
+
+#: .\templates\manager\reports\report_list_years_allmembers.html.py:4
+#: .\templates\manager\reports\report_list_years_bytype.html.py:4
+msgid "Select a year"
+msgstr "Izberite leto"

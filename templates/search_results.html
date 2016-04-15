@@ -1,0 +1,13 @@
+{% if entries %}
+    <p>Found {{ entries|length }} entr{{ entries|pluralize:"y,ies" }}.</p>
+    <ul>
+        {% for entry in entries %}
+        <li>
+          <div class="entry_name"><a class="entry_link" href="/entry/update/{{ entry.pk }}">{{ entry.name }}</a></div>
+          <div class="entry_content"><span class="entry_content_date">{{ entry.date_create }}</span> - {{ entry.content|slice:":150" }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No entries matched your search criteria.</p>
+{% endif %}

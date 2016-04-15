@@ -1,0 +1,187 @@
+{% extends "index.html" %}
+{% block content %}
+{% load i18n %}
+       <h2>{% trans "Manage logbook" %}</h2>
+       <h1>&nbsp;</h1>
+
+   <br/>
+    <h2>{% trans "Flights" %} - {{ type }} </h2><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/create/flight/" class="btna btnrf" title="{% trans 'Add new flight' %}">&nbsp;</a>
+    <fieldset>
+        <table>
+
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>{% trans "Pilot" %}</th>
+                <th>{% trans "Instructor" %}</th>
+                <th>{% trans "Aircraft" %}</th>
+                <th>{% trans "Purpose" %}</th>
+                {% ifequal type "powered" %}
+                <th>{% trans "Block off" %}</th>
+                {% endifequal %}
+                <th>{% trans "Takeoff" %}</th>
+                <th>{% trans "Release" %}</th>
+                <th>{% trans "Landing" %}</th>
+                {% ifequal type "powered" %}
+                <th>{% trans "Block on" %}</th>
+                {% endifequal %}
+                <th>{% trans "Remark" %}</th>
+                <th class="ths">&nbsp;</th>
+                <th class="ths">&nbsp;</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in flights %}
+            <tr>
+              <form action="/logbook/{{ type }}/manage/{{ logbook.pk }}/edit/flight/advanced/{{ object.pk }}/" method="POST">{% csrf_token %}
+               <td>{{ object.pk }}</td>
+               <td><div class="ui-widget"><input id="id_pilot" name="pilot" data="id_pilot_ajax_{{ object.pk }}" type="hidden" value="{{ object.pilot.pk }}"/><input id="pilot_ajax_{{ object.pk }}" name="pilot_ajax_{{ object.pk }}" width="120" type="text" value="{{ object.first_name}} {{ object.last_name}}" placeholder="{% trans 'Pilot' %}" required/></div></td>
+               <td><div class="ui-widget"><input id="id_instructor" name="instructor" data="id_instructor_ajax_{{ object.pk }}" type="hidden" value="{{ object.instructor.pk }}"/><input id="instructor_ajax_{{ object.pk }}" name="instructor_ajax_{{ object.pk }}" width="120" type="text" value="{% if object.instructor %}{{ object.instructor_first_name}} {{ object.instructor_last_name}}{% endif %}" placeholder="{% trans 'Instructor' %}" /></div></td>
+               <td><div class="ui-widget"><input id="id_aircraft" name="aircraft" data="id_aircraft_ajax_{{ object.pk }}" value="{{ object.aircraft.pk }}" type="hidden"/><input id="aircraft_ajax_{{ object.pk }}" name="aircraft_ajax_{{ object.pk }}" width="80" value="{{ object.registration}}" type="text" placeholder="{% trans 'Aircraft' %}" required/></div></td>
+               <td><div class="ui-widget"><input id="id_purpose" name="purpose" data="id_purpose_ajax_{{ object.pk }}" value="{{ object.purpose.pk }}" type="hidden"/><input id="purpose_ajax_{{ object.pk }}" name="purpose_ajax_{{ object.pk }}" width="80" value="{{ object.purpose.name}}" type="text" placeholder="{% trans 'Purpose' %}" required/></div></td>
+               {% ifequal type "powered" %}
+               <td><input id="id_time_block_off" type="text" width="50" value="{{ object.time_block_off|date:'H:i' }}" name="time_block_off" /></td>
+               {% endifequal %}
+               <td><input id="id_time_takeoff" type="text" width="50" value="{{ object.time_takeoff|date:'H:i' }}" name="time_takeoff" /></td>
+               <td><input id="id_time_tow_release" type="text" width="50" value="{{ object.time_tow_release|date:'H:i' }}" name="time_tow_release" /></td>
+               <td><input id="id_time_landing" type="text" width="50" value="{{ object.time_landing|date:'H:i' }}" name="time_landing" /></td>
+               {% ifequal type "powered" %}
+               <td><input id="id_time_block_on" type="text" width="50" value="{{ object.time_block_on|date:'H:i' }}" name="time_block_on" /></td>
+               {% endifequal %}
+               <td><input id="id_remark" type="text" width="120" value="{{ object.remark}}" name="remark" /></td>
+               <td><input type="submit" class="button white" value="{% trans 'S' %}" /></td>
+               <td class="tds"><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/edit/flight/advanced/{{ object.pk }}/" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+               <td class="tds"><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/delete/flight/advanced/{{ object.pk }}/" class="btnd" title="{% trans 'Delete' %}">&nbsp;</a></td>
+             </form>
+            </tr>
+{% endfor %}
+            <tr>
+              <form action="/logbook/{{ type }}/manage/{{ logbook.pk }}/create/flight/advanced/" method="POST">{% csrf_token %}
+               <td>{% trans "New" %}</td>
+               <td><div class="ui-widget"><input id="id_pilot" name="pilot" data="id_pilot_ajax" type="hidden" value=""><input id="pilot_ajax" name="pilot_ajax" width="120" type="text" placeholder="{% trans 'Pilot' %}" autofocus required /></div></td>
+               <td><div class="ui-widget"><input id="id_instructor" name="instructor" data="id_instructor_ajax" type="hidden" value=""><input id="instructor_ajax" name="instructor_ajax" width="120" type="text" placeholder="{% trans 'Instructor' %}" /></div></td>
+               <td><div class="ui-widget"><input id="id_aircraft" name="aircraft" data="id_aircraft_ajax" value="{{ object.aircraft.pk }}" type="hidden"><input id="aircraft_ajax" name="aircraft_ajax" width="80" value="{{ object.registration}}" type="text" placeholder="{% trans 'Aircraft' %}" required /></div></td>
+               <td><div class="ui-widget"><input id="id_purpose" name="purpose" data="id_purpose_ajax" type="hidden"><input id="purpose_ajax" name="purpose_ajax" width="80" value="" type="text" placeholder="{% trans 'Purpose' %}" required /></div></td>
+               {% ifequal type "powered" %}
+               <td><input id="id_time_block_off" type="text" width="50" value="{{ object.time_block_off|date:'H:i' }}" name="time_block_off" /></td>
+               {% endifequal %}
+               <td><input id="id_time_takeoff" type="text" width="50" value="{{ object.time_takeoff|date:'H:i' }}" name="time_takeoff" pattern="\d{1,2}:\d{1,2}"/></td>
+               <td><input id="id_time_tow_release" type="text" width="50" value="{{ object.time_tow_release|date:'H:i' }}" name="time_tow_release" /></td>
+               <td><input id="id_time_landing" type="text" width="50" value="{{ object.time_landing|date:'H:i' }}" name="time_landing" /></td>
+               {% ifequal type "powered" %}
+               <td><input id="id_time_block_on" type="text" width="50" value="{{ object.time_block_on|date:'H:i' }}" name="time_block_on" /></td>
+               {% endifequal %}
+               <td><input id="id_remark" type="text" width="120" value="{{ object.remark}}" name="remark" /></td>
+               <td><input type="submit" class="button white" value="{% trans 'A' %}" /></td>
+               <td class="tds"><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/edit/flight/{{ object.pk }}/" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+               <td class="tds"><a href="/logbook/{{ type }}/manage/{{ logbook.pk }}/delete/flight/{{ object.pk }}/" class="btnd" title="{% trans 'Delete' %}">&nbsp;</a></td>
+             </form>
+            </tr>
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+   
+   Number.prototype.pad = function(size)
+   {
+      if(typeof(size) !== "number"){size = 2;}
+      var s = String(this);
+      while (s.length < size) s = "0" + s;
+      return s;
+   }
+   
+   jQuery(function($)
+   {
+      $("[id^='id_time_']").mask("99:99",{placeholder:" "});
+   });
+    
+   $("[id^='pilot_ajax']").keyup(function() 
+   {
+      var search = $(this).val();
+      Dajaxice.manager.get_pilot(ajaxCallback, {'search_data': search, 'field_id': $(this).attr('id')});
+   }); 
+    
+   $("[id^='instructor_ajax']").keyup(function() 
+   {
+      var search = $(this).val();
+      Dajaxice.manager.get_pilot(ajaxCallback, {'search_data': search, 'field_id': $(this).attr('id')});
+   }); 
+    
+   $("[id^='aircraft_ajax']").keyup(function() 
+   {
+      var search = $(this).val();
+      Dajaxice.manager.get_aircraft(ajaxCallback, {'search_data': search, 'type': '{{ type }}', 'field_id': $(this).attr('id')});
+   }); 
+    
+   $("[id^='purpose_ajax']").keyup(function() 
+   {
+      var search = $(this).val();
+      Dajaxice.manager.get_purpose(ajaxCallback, {'search_data': search, 'type': '{{ type }}', 'field_id': $(this).attr('id')});
+   }); 
+    
+   function ajaxCallback(data) 
+   {
+      $( "#"+data.field_id ).autocomplete(
+      {source: data.results, delay: 200, autoFocus: true,
+       select: function(event, ui) 
+         {
+            var selectedObj = ui.item;
+            $("[data='id_"+data.field_id+"']").val(selectedObj.id);
+            return true;
+         },
+       change: function (event, ui) 
+         {
+            if (ui.item == null || ui.item == undefined) 
+            {
+            clearAjaxFields(data.field_id);
+            }
+         }
+      });
+   }
+   
+   function clearAjaxFields(field_id) 
+   {
+       //resets search txtbx
+       var searchField = $('#'+field_id);
+       searchField.val("");
+    
+       //resets search txtbx hidden field
+       var hdnSearchField = $("[data='id_"+field_id+"']");
+       hdnSearchField.val("");
+   }
+
+   function checkIfSingle(event, ui)
+   {
+      // Try to select the first one if it's the only one
+      var $children = jQuery(this).data('autocomplete').menu.element.children();
+      if ($children.size() == 1)
+      {
+        $children.children('a').mouseenter().click();
+      }   
+   }
+   
+   function setFlightEventTime(flight_id, event_name)
+   {
+      var date = new Date();
+      var minutes = date.getMinutes();
+      var hour = date.getHours();
+      var timeString = hour.pad() + ":" + minutes.pad();
+      Dajaxice.manager.set_flight_event_time(flightEventTimeCallback, {'flight_id': flight_id, 'event_name': event_name, 'time': timeString});
+   }
+
+   function flightEventTimeCallback(data)
+   {
+      $( "#"+data.event_name+"-"+data.flight_id ).children().replaceWith(function(){ return data.time; });
+   }
+</script>
+{% endblock %}

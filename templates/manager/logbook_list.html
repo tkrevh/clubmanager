@@ -1,0 +1,51 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+    <h1>&nbsp;</h1>
+    <h2>{% trans "Logbooks" %}</h2><a href="/logbook/{{ type }}/create/" class="btna btnrf" title="{% trans 'Add new logbook' %}">&nbsp;</a>
+    <fieldset>
+        <table>
+
+            <thead>
+            <tr>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Type" %}</th>
+                <th class="ths">&nbsp;</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in object_list %}
+            <tr>
+               <td><a href="/logbook/{{ type }}/manage/advanced/{{ object.pk }}/">{{ object.date }}</a></td>
+               <td><a href="/logbook/{{ type }}/manage/advanced/{{ object.pk }}/">{{ object.get_type_display }}</a></td>
+               <td class="tds"><a href="/logbook/{{ type }}/manage/advanced/{{ object.pk }}/" class="btno" title="{% trans 'View' %}">&nbsp;</a></td>
+               <td class="tds"><a href="/logbook/{{ type }}/update/{{ object.pk }}" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+    
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a class="button white" href="/logbook/{{ type }}/list?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a>
+                {% endif %}
+                <span class="page-current">
+                    <b>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</b>
+                </span>
+                {% if page_obj.has_next %}
+                    <a class="button white" href="/logbook/{{ type }}/list?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}    
+
+{% endblock %}

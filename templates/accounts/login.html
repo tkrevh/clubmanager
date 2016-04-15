@@ -1,0 +1,25 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+{% load i18n %}
+<form id="login" action="." method="post">
+    {% csrf_token %}
+    <h1>{% trans "Log In" %}</h1>
+{% if form.errors %}
+   <p>{% trans "Your username and password didn't match, please try again." %}</p>
+{% endif %}
+    <fieldset id="inputs">
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% else %}
+            <input type="hidden" name="next" value="/" />
+        {% endif %}
+        <input id="id_username" name="username" type="text" placeholder="{% trans "Username" %}" autofocus required>   
+        <input id="id_password" name="password" type="password" value="" placeholder="{% trans "Password" %}" required>
+    </fieldset>
+    <fieldset id="actions">
+        <input type="submit" id="submit" class="button white" value="{% trans "Log in" %}">
+        <a href="/password_reset/">{% trans "Forgot your password?" %}</a><a href="/signup/">{% trans "Register" %}</a>
+    </fieldset>
+</form>
+
+{% endblock %}

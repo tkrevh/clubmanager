@@ -1,0 +1,10 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+
+<form enctype="multipart/form-data" action="." method="POST">{% csrf_token %}
+   {% include "base_form.html" %}
+   <label for="submit"></label>
+   <input type="submit" id="submit" class="button white" value="{% trans 'Upload it' %}" />
+</form>
+
+{% endblock %}

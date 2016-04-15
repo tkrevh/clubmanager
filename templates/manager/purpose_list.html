@@ -1,0 +1,36 @@
+{% extends "index.html" %}{% block content %}
+{% load i18n %}
+
+    <h1>&nbsp;</h1>
+    <h2>{% trans "Flight purposes" %}</h2><a href="/purpose/create/" class="btna btnrf" title="{% trans 'Add new purpose' %}">&nbsp;</a>
+    <fieldset>
+        <table id="sortedTable" class="tablesorter">
+
+            <thead>
+            <tr>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Type" %}</th>
+                <th>{% trans "Billing type" %}</th>
+                <th class="ths">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+{% for object in object_list %}
+            <tr>
+               <td><a href="/purpose/update/{{ object.pk }}/">{{ object.name }}</a></td>
+               <td><a href="/purpose/update/{{ object.pk }}/">{{ object.get_type_display }}</a></td>
+               <td><a href="/purpose/update/{{ object.pk }}/">{{ object.get_billing_type_display }}</a></td>
+               <td class="tds"><a href="/purpose/update/{{ object.pk }}/" class="btne" title="{% trans 'Edit' %}">&nbsp;</a></td>
+            </tr>
+{% endfor %}
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="10"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+
+{% endblock %}
