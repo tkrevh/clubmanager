@@ -1,0 +1,8 @@
+python setup_organisation.py
+python import_sailplane_purposes.py
+python import_powered_purposes.py
+python import_powered.py
+python import_sailplanes.py
+python import_members.py
+python import_sailplane_flights.py
+python import_powered_flights.py

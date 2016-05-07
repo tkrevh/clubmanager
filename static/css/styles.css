@@ -187,7 +187,7 @@ nav li a {
 }
 
 #content table th, #content table td {
-    padding: 5px;
+    padding: 1px;
 }
 
 #content table tbody tr {
@@ -336,25 +336,10 @@ label {
     font-weight: bold;
     text-align: right;
     padding: 5px 5px 0 0;
-    vertical-align: top;    
 }
 
-input, textarea {
+input, textarea, select {
     height: 30px;
-    margin: 2px 0;
-    padding: 5px;
-    width: 300px;
-    border: 1px solid #ccc;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-}
-
-select {
-    height: 200px;
     margin: 2px 0;
     padding: 5px;
     width: 300px;
@@ -369,11 +354,6 @@ select {
 
 td input[type="submit"]{
     width: 15px;
-    padding: 0;
-}
-
-form input[type="submit"]{
-    width: 80px;
     padding: 0;
 }
 
@@ -412,7 +392,7 @@ input[width="40"] {
 }
 
 textarea {
-    width: 300px;
+    width: 250px;
     height: 150px;
 }
 
@@ -430,27 +410,4 @@ textarea {
    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #FF7566), color-stop(1, #EF1120));
    background-image: -webkit-linear-gradient(left, #FF7566 0%, #EF1120 100%);
    background-image: linear-gradient(to right, #FF7566 0%, #EF1120 100%);   
-}
-
-.entry_link {
-  color: #0000ee;
-}
-
-.entry_name {
-  font-size: 16px !important;
-  font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.entry_content {
-  clear: both;
-  font-size: 12;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
-.entry_content_date {
-  font-size: 12;
-  color: #cccccc;
 }

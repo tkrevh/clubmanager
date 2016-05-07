@@ -11,9 +11,15 @@ from django import forms
 from django.core.mail import send_mail
 from manager.models import *
     
-    
-class UploadFileForm(forms.Form):
-    file = forms.FileField()
+def make_custom_datefield(f):
+    formfield = f.formfield()
+    if isinstance(f, models.DateField):
+        formfield.input_formats = ('%d/%m/%Y',)
+        formfield.widget.format = '%d/%m/%Y'
+        formfield.widget.attrs.update({'class':'datePicker'})
+    if isinstance(f, models.TimeField):
+        formfield.widget.attrs.update({'class':'timePicker'})
+    return formfield    
     
 class UserCreationForm(forms.ModelForm):
     username = forms.RegexField(label=_("Username"), max_length=30, regex=r'^[\w.@+-]+$',
@@ -78,14 +84,97 @@ class UserCreationForm(forms.ModelForm):
                   t.render(Context(c)), 'tadej.krevh@gmail.com', [user.email])
         return user    
     
-class EntryForm(ModelForm):
-    class Meta:
-        model = Entry
-        exclude = ['date_create']
+class AircraftForm(ModelForm):
 
-class ListingForm(ModelForm):
     class Meta:
-        model = Listing
-        exclude = ['date_create']
+        model = Aircraft
+        exclude = ('organisation')
+
+class MemberForm(ModelForm):
+    formfield_callback = make_custom_datefield
+    class Meta:
+        model = Member
+        exclude = ('organisation', 'date_joined', 'last_login', 'last_password_check', 'user')
+          
+class DocumentForm(ModelForm):
+    formfield_callback = make_custom_datefield
+    class Meta:
+        model = Document
+        exclude = ('member')
+          
+class OrganisationForm(ModelForm):
+
+    class Meta:
+        model = Organisation
+        exclude = ('administrator')
         
+        
+class LogbookForm(ModelForm):
+    formfield_callback = make_custom_datefield
+    class Meta:
+        model = Logbook
+        exclude = ('organisation', 'type')
+        
+    def clean_date(self):
+        submited_date  = self.cleaned_data['date']
+
+        if submited_date:
+            existingLogbook = Logbook.objects.filter(type=self.instance.type, date=submited_date)
+            if existingLogbook:
+                raise forms.ValidationError(_("Logbook already exists for this type and date!"))
+
+        # Always return the full collection of cleaned data.
+        return submited_date     
+        
+class SailplaneFlightForm(ModelForm):
+    time_takeoff = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    time_tow_release = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    time_landing = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    
+    remark = forms.CharField( widget=forms.Textarea, required=False )
+    
+    formfield_callback = make_custom_datefield
+    
+    class Meta:
+        model = Flight
+        exclude = ('organisation', 'logbook', 'time_block_off', 'time_block_on', 'date', 'flight_time')
+
+class PoweredAircraftFlightForm(ModelForm):
+    time_block_off = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    time_takeoff = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    time_tow_release = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    time_landing = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
+    time_block_on = forms.TimeField(widget=forms.TimeInput(format='%H:%M', attrs={'class':'timePicker'}), input_formats = ('%H:%M',), required=False )
    
+    remark = forms.CharField( widget=forms.Textarea, required=False )
+
+    formfield_callback = make_custom_datefield
+    
+    class Meta:
+        model = Flight
+        exclude = ('organisation', 'logbook', 'igc_file', 'time_tow_release', 'date', 'flight_time')
+                
+class PurposeForm(ModelForm):
+
+    class Meta:
+        model = Purpose
+        exclude = ('organisation')
+                
+                
+
+class DetailReportForm(forms.Form):
+    formfield_callback = make_custom_datefield
+
+    pilot = forms.IntegerField(required=False)
+    aircraft = forms.IntegerField(required=False)
+    date_from = forms.DateField(input_formats = ('%d/%m/%Y',), required=False)
+    date_to = forms.DateField(input_formats = ('%d/%m/%Y',), required=False)
+    text_search = forms.CharField(required=False)
+    
+    
+    
+    
+    
+    
+    
+    

@@ -24,6 +24,15 @@ urlpatterns = patterns('',
     (r'^i18n/', include('django.conf.urls.i18n')),    
     (r'^$', 'manager.views.main_menu'),
     
+    (r'^reports/$', 'manager.views.reports_menu'),
+    (r'^reports/(?P<type>\w+)/allmembers/$', 'manager.views.list_flight_years_allmembers'),
+    (r'^reports/(?P<type>\w+)/allmembers/(?P<year>\d+)/$', 'manager.views.report_members_yearly'),
+    
+    (r'^reports/(?P<type>\w+)/bytype/$', 'manager.views.list_flight_years_bytype'),
+    (r'^reports/(?P<type>\w+)/bytype/(?P<year>\d+)/$', 'manager.views.report_bytype_yearly'),
+    
+    (r'^reports/(?P<type>\w+)/detailed/$', 'manager.views.report_detailed'),
+
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
 
     # Login / logout.
@@ -75,67 +84,196 @@ urlpatterns = patterns('',
      {'template_name': 'accounts/signup_complete.html'}),
                         
     url (
-       regex = '^entry/list/$',
-       view =  EntryListView.as_view(),
-       name = 'entry_list'
+       regex = '^aircraft/list/$',
+       view =  AircraftListView.as_view(),
+       name = 'aircraft_list'
      ),
 
     url (
-        regex = '^entry/create/$',
-        view =  EntryCreateView.as_view(),
-        name = 'entry_create'
+        regex = '^aircraft/create/$',
+        view =  AircraftCreateView.as_view(),
+        name = 'aircraft_create'
     ),
 
     url (
-        regex = '^entry/detail/(?P<pk>\d+)/$',
-        view =  EntryDetailView.as_view(),
-        name = 'entry_detail'
+        regex = '^aircraft/detail/(?P<pk>\d+)/$',
+        view =  AircraftDetailView.as_view(),
+        name = 'aircraft_detail'
     ),
     
     url (
-        regex = '^entry/delete/(?P<pk>\d+)/$',
-        view =  EntryDeleteView.as_view(),
-        name = 'entry_delete'
+        regex = '^aircraft/delete/(?P<pk>\d+)/$',
+        view =  AircraftDeleteView.as_view(),
+        name = 'aircraft_delete'
     ),
     
     url (
-        regex = '^entry/update/(?P<pk>\d+)/$',
-        view =  EntryUpdateView.as_view(),
-        name = 'entry_update'
+        regex = '^aircraft/update/(?P<pk>\d+)/$',
+        view =  AircraftUpdateView.as_view(),
+        name = 'aircraft_update'
     ),
 
     url (
-       regex = '^listing/list/$',
-       view =  ListingListView.as_view(),
-       name = 'listing_list'
+       regex = '^purpose/list/$',
+       view =  PurposeListView.as_view(),
+       name = 'purpose_list'
      ),
 
     url (
-        regex = '^listing/create/$',
-        view =  ListingCreateView.as_view(),
-        name = 'listing_create'
+        regex = '^purpose/create/$',
+        view =  PurposeCreateView.as_view(),
+        name = 'purpose_create'
     ),
 
     url (
-        regex = '^listing/detail/(?P<pk>\d+)/$',
-        view =  ListingDetailView.as_view(),
-        name = 'listing_detail'
+        regex = '^purpose/detail/(?P<pk>\d+)/$',
+        view =  PurposeDetailView.as_view(),
+        name = 'purpose_detail'
     ),
     
     url (
-        regex = '^listing/delete/(?P<pk>\d+)/$',
-        view =  ListingDeleteView.as_view(),
-        name = 'listing_delete'
+        regex = '^purpose/delete/(?P<pk>\d+)/$',
+        view =  PurposeDeleteView.as_view(),
+        name = 'purpose_delete'
     ),
     
     url (
-        regex = '^listing/update/(?P<pk>\d+)/$',
-        view =  ListingUpdateView.as_view(),
-        name = 'listing_update'
+        regex = '^purpose/update/(?P<pk>\d+)/$',
+        view =  PurposeUpdateView.as_view(),
+        name = 'purpose_update'
+    ),
+    
+    url (
+       regex = '^member/list/$',
+       view =  MemberListView.as_view(),
+       name = 'member_list'
+     ),
+
+    url (
+        regex = '^member/create/$',
+        view =  MemberCreateView.as_view(),
+        name = 'member_create'
     ),
 
-    url(r'^search/$', search),    
-    url(r'^upload_file/$', upload_file),    
+    url (
+        regex = '^member/detail/(?P<pk>\d+)/$',
+        view =  MemberDetailView.as_view(),
+        name = 'member_detail'
+    ),
+    
+    url (
+        regex = '^member/delete/(?P<pk>\d+)/$',
+        view =  MemberDeleteView.as_view(),
+        name = 'member_delete'
+    ),
+    
+    url (
+        regex = '^member/update/(?P<pk>\d+)/$',
+        view =  MemberUpdateView.as_view(),
+        name = 'member_update'
+    ),
+    
+    url (
+       regex = '^logbook/(?P<type>\w+)/list/$',
+       view =  LogbookListView.as_view(),
+       name = 'logbook_list'
+     ),
+
+    url (
+        regex = '^logbook/(?P<type>\w+)/create/$',
+        view =  LogbookCreateView.as_view(),
+        name = 'logbook_create'
+    ),
+
+    url (
+        regex = '^logbook/(?P<type>\w+)/detail/(?P<pk>\d+)/$',
+        view =  LogbookDetailView.as_view(),
+        name = 'logbook_detail'
+    ),
+    
+    url (
+        regex = '^logbook/delete/(?P<pk>\d+)/$',
+        view =  LogbookDeleteView.as_view(),
+        name = 'logbook_delete'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/update/(?P<pk>\d+)/$',
+        view =  LogbookUpdateView.as_view(),
+        name = 'logbook_update'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/$',
+        view =  LogbookManageView.as_view(),
+        name = 'logbook_manage'
+    ),
+
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/advanced/(?P<logbook_id>\d+)/$',
+        view =  LogbookManageAdvancedView.as_view(),
+        name = 'logbook_manage_advanced'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/create/flight/$',
+        view =  FlightCreateView.as_view(),
+        name = 'flight_create'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/create/flight/advanced/$',
+        view =  AdvancedFlightCreateView.as_view(),
+        name = 'flight_create_advanced'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/edit/flight/(?P<pk>\d+)/$',
+        view =  FlightUpdateView.as_view(),
+        name = 'flight_create'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/edit/flight/advanced/(?P<pk>\d+)/$',
+        view =  AdvancedFlightUpdateView.as_view(),
+        name = 'flight_update_advanced'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/delete/flight/(?P<pk>\d+)/$',
+        view =  FlightDeleteView.as_view(),
+        name = 'flight_delete'
+    ),
+    
+    url (
+        regex = '^logbook/(?P<type>\w+)/manage/(?P<logbook_id>\d+)/delete/flight/advanced/(?P<pk>\d+)/$',
+        view =  AdvancedFlightDeleteView.as_view(),
+        name = 'flight_delete_advanced'
+    ),
+    
+    url (
+        regex = '^organisation/create/$',
+        view =  OrganisationCreateView.as_view(),
+        name = 'organisation_create'
+    ),
+
+    url (
+        regex = '^organisation/update/(?P<pk>\d+)/$',
+        view =  OrganisationUpdateView.as_view(),
+        name = 'organisation_update'
+    ),
+    
+    url (
+        regex = '^document/create/(?P<member_id>\d+)/$',
+        view =  DocumentCreateView.as_view(),
+        name = 'document_create'
+    ),
+
+    url (
+        regex = '^document/update/(?P<member_id>\d+)/(?P<pk>\d+)/$',
+        view =  DocumentUpdateView.as_view(),
+        name = 'document_update'
+    ),
 )
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

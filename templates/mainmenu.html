@@ -1,67 +1,23 @@
 {% extends "index.html" %}{% block content %}
 {% load i18n %}
-    <h2>{% trans "Directory" %}</h2>
+     {% if organisation %}
+         <h2>{{ organisation.name }} - {% trans "Club administration page" %}</h2>
+     {% else %}
+         <h2>{% trans "Club administration page" %}</h2>
+     {% endif %}
     <h1>&nbsp;</h1>
 
     <div>
-      <form id="search_form" action="/search" method="get">
-        <input id="q" name="q" type="text" placeholder="{% trans 'Enter your search here...' %}" autofocus required>  
-        <input type="submit" value="Search">  
-      </form>
+        {% if organisation %}
+            <a href="/logbook/sailplane/list/" class="btn-admin">{% trans "Sailplane Logbook" %}</a>
+            <a href="/logbook/powered/list/" class="btn-admin">{% trans "Powered Aircraft Logbook" %}</a>
+            <a href="/reports/" class="btn-admin">{% trans "Reports" %}</a>
+            <a href="/member/list/" class="btn-admin">{% trans "Pilots" %}</a>
+            <a href="/aircraft/list/" class="btn-admin">{% trans "Airplanes" %}</a>
+            <a href="/purpose/list/" class="btn-admin">{% trans "Flight purposes" %}</a>
+            <a href="/organisation/update/{{ organisation.pk }}" class="btn-admin">{% trans "Club" %}</a>
+        {% else %}
+            <a href="/organisation/create/" class="btn-admin">{% trans "Create a new club" %}</a>
+        {% endif %}
     </div>
-    <div id="results">
-      <div id="results_placeholder"/>
-    </div>
-    <div>
-        <a href="/entry/list/" class="btn-admin">{% trans "Entries" %}</a>
-        <a href="/listing/list/" class="btn-admin">{% trans "Listings" %}</a>
-    </div>
-{% endblock %}
-{% block scripts %}
-<script type="text/javascript">
-   
-   $("[id^='q']").keyup(function() 
-   {
-      var search = $(this).val();
-      Dajaxice.manager.get_entry(searchCallback, {'search_data': search, 'field_id': 'q'});
-   });
-   
-   function searchCallback(data) 
-   {
-      $( "#q" ).autocomplete({source: data.results, delay: 500, autoFocus: false,
-          select: function(event, ui) {
-            var selectedObj = ui.item;
-            $('#q').val(selectedObj.id);
-            return true;
-          },
-       change: function (event, ui) 
-         {
-            if (ui.item == null || ui.item == undefined) 
-            {
-              $('#q').val("");
-            }
-         }
-      });
-   }
-   
-  $(function() {
-    $('#search_form').submit(function(event) {
-      var form = $(this);
-      $.ajax({
-        type: form.attr('method'),
-        url: form.attr('action'),
-        data: form.serialize(),
-        success: function(response) {
-          $('#results_placeholder').html(response);
-        }
-      }).done(function() {
-        // Optionally alert the user of success here...
-      }).fail(function() {
-        // Optionally alert the user of an error here...
-      });
-      event.preventDefault(); // Prevent the form from submitting via the browser.
-    });
-  });   
-
-</script>
 {% endblock %}
